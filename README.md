@@ -90,11 +90,6 @@ _Not available yet._
 
 ### USER STORIES
 
-- The user doesn't need to have access to a gym.
-- The user is concerned about safety.
-- The user is concerned about time management and metrics.
-- The user is concerned with motivation.
-- The user wants to diversify their routines.
 
 **Making an account**
 1. The user opens the app and reaches the landing screen.
