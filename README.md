@@ -84,7 +84,7 @@ The app features log-in functionality as a way to save routines; however, loggin
 
 |id|name|category|user|exercises|
 |:-:|:-:|:-:|:-:|:-:|
-|Primary|||Users(id)|_arr_[Exercises(id), ...]|
+|Primary|||Users(id)| JOIN with Exercises(id) |
 
 ### USER STORIES
 
