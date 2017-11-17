@@ -12,20 +12,17 @@
 ### PROJECT GOALS
 
 - Create an API using `Express.js` that possesses full CRUD functionalities.
-
-- A POST request can create a new exercise and insert that exercise into an existing muscle group.
-- A GET request can retrieves an array of exercises based on type/muscle group.
-- A PUT request can update an exercise.
-- A DELETE request can delete an existing exercise.
-
-- A POST request can create a new routine.
-- A GET request can retrieve previously saved routines.
-- A PUT request can update an existing routine.
-- A DELETE request can delete existing routines.
+- POST creates new routines and new users.
+- GET retrieves exercises for a routine, and user data.
+- PUT updates the names of existing routines the user saved.
+- DELETE removes existing routines.
 
 - Create a `React.js` application that presents the API's data in a user-friendly way.
 
-- ???
+![LANDING PAGE](https://i.imgur.com/GFbUedP.jpg)
+![ROUTINE PAGE](https://i.imgur.com/GWk8oQu.jpg)
+![EXERCISE PAGE](https://i.imgur.com/8KhujYq.jpg)
+![USER PAGE](https://i.imgur.com/LVx2hUx.jpg)
 
 ### TECHNOLOGIES
 
