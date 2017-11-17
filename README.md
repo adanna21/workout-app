@@ -70,6 +70,21 @@ The app features log-in functionality as a way to save routines; however, loggin
 
 _Not available yet._
 
+**Users**
+|id|name|password_digest|
+|:-:|:-:|:-:|
+|Primary||hash|
+
+**Exercises**
+|id|name|category|url|reps|sets|
+|:-:|:-:|:-:|:-:|:-:|:-:|
+|Primary||||||
+
+**Routines**
+|id|name|category|user|exercises|
+|:-:|:-:|:-:|:-:|:-:|
+|Primary|||Users(id)|arr[Exercises(id), ...]|
+
 ### USER STORIES
 
 - The user doesn't need to have access to a gym.
