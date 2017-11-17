@@ -90,7 +90,6 @@ _Not available yet._
 
 ### USER STORIES
 
-
 **Making an account**
 1. The user opens the app and reaches the landing screen.
 2. The user selects the register button on the header, which takes them to a registration screen.
@@ -118,3 +117,11 @@ _Not available yet._
 2. The user selects the routine button, which takes them to the routine creation screen.
 3. The user selects the route they wish to do for the day. The randomly-generated routine list appears.
 4. The user can save the list with a button at the bottom.
+
+### STYLE GUIDE
+
+_TBD_
+
+### LINKS
+
+[PROJECT BOARD](https://github.com/adanna21/workout-app/projects/1)
