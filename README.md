@@ -86,7 +86,7 @@ _Not available yet._
 
 |id|name|category|user|exercises|
 |:-:|:-:|:-:|:-:|:-:|
-|Primary|||Users(id)|arr[Exercises(id), ...]|
+|Primary|||Users(id)|_arr_[Exercises(id), ...]|
 
 ### USER STORIES
 
