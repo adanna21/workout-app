@@ -68,8 +68,6 @@ The app features log-in functionality as a way to save routines; however, loggin
 
 ### ERDS
 
-_Not available yet._
-
 **Users**
 
 |id|name|password_digest|
