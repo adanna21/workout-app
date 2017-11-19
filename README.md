@@ -33,19 +33,20 @@ The app features log-in functionality as a way to save routines; however, loggin
 ### WIREFRAMES
 
 **Landing Page**
-![LANDING PAGE](https://i.imgur.com/GFbUedP.jpg)
+![LANDING PAGE](https://i.imgur.com/QS4QbyQ.jpg)
+**Category Page**
+![CATEGORY PAGE](https://i.imgur.com/F1KS9yn.jpg)
 **Routine Page**
-![ROUTINE PAGE](https://i.imgur.com/GWk8oQu.jpg)
+![ROUTINE PAGE](https://i.imgur.com/FxTldio.jpg)
 **Exercise Page**
-![EXERCISE PAGE](https://i.imgur.com/8KhujYq.jpg)
+![EXERCISE PAGE](https://i.imgur.com/DRBQAlJ.jpg)
 **User Page**
-![USER PAGE](https://i.imgur.com/LVx2hUx.jpg)
+![USER PAGE](https://i.imgur.com/LIHVTVA.jpg)
 
-**Layouts Considered**
-![ex1](https://i.imgur.com/KwBGOAg.jpg)
-![ex2](https://i.imgur.com/0UsJrtz.jpg)
-![ex3](https://i.imgur.com/jZJZp9c.jpg)
-![ex4](https://i.imgur.com/t0WShso.jpg)
+**API**
+![FETCH REQUESTS](https://i.imgur.com/elMA4AO.jpg)
+**Component Map**
+![COMPONENT MAP](https://i.imgur.com/8bjyTye.jpg)
 
 ### TECHNOLOGIES
 
