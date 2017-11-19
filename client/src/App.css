@@ -37,11 +37,19 @@ header{
 
 .logo{
   display: flex;
+  height:300px;
   flex:1;
   margin:5px;
 }
 
+ul {
+  display: flex;
+  flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
 li{
-  text-decoration: none;
-  
+  margin:10px;
 }
