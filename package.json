@@ -1,4 +1,12 @@
 {
+  "name": "iLift",
+  "version": "1.0.0",
+  "description": "workout app for those who want aggregated workouts",
+  "main": "server.js",
+  "repository": "git@github.com:adanna21/workout-app.git",
+  "author": "Adanna Omatu <adaomatu@gmail.com>",
+  "license": "MIT",
+  "private": false,
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
@@ -11,12 +19,9 @@
     "passport-local": "^1.0.0",
     "pg-promise": "^7.3.2"
   },
-  "name": "iLift",
-  "version": "1.0.0",
-  "description": "workout app for those who want aggregated workouts",
-  "main": "server.js",
-  "repository": "git@github.com:adanna21/workout-app.git",
-  "author": "Adanna Omatu <adaomatu@gmail.com>",
-  "license": "MIT",
-  "private": false
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "debugger": "DEBUG=*:* nodemon server.js"
+  }
 }
