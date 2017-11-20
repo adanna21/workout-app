@@ -1,90 +1,60 @@
-const Routine = require('../models/Routine');
+const Routine = require('../models/Routine')
 
-const routineController = {};
+const routineController = {}
 
-routineController.index = (req, res) => {
+routineController.index = (req, res, next) => {
   Routine.findAll()
-    .then(routine => {
+    .then(routines => {
       res.json({
         message: 'ok',
-        data: {
-          routine: routine,
-        },
-      });
-    }).catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-};
+        data: {routines}
+      })
+    }).catch(next)
+}
 
-routineController.show = (req, res) => {
+routineController.show = (req, res, next) => {
   Routine.findById(req.params.id)
     .then(routine => {
       res.json({
         message: 'ok',
-        data: {
-          routine: routine,
-        },
-      });
-    }).catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-};
+        data: {routine}
+      })
+    }).catch(next)
+}
 
-routineController.create = (req, res) => {
-  Flashcard.create({
-      type: req.body.type,
-      bodyPart: req.body.bodyPart,
-      name: req.body.name,
-      reps: req.body.reps,
-      link: req.body.link,
-    })
-    .then(routine => {
-      res.json({
-        message: 'Yup added',
-        data: {
-          routine: routine,
-        },
-      });
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-};
-
-routineController.update = (req, res) => {
-  Routine.update({
-    type: req.body.type,
-    bodyPart: req.body.bodyPart,
-    name: req.body.name,
-    reps: req.body.reps,
-    link: req.body.link,
-  }, req.params.id).then(lift => {
+routineController.create = (req, res, next) => {
+  Routine.create({
+    title: req.body.title,
+    description: req.body.description,
+    genre: req.body.genre
+  }, req.user.id).then(routine => {
     res.json({
-      message: 'Yup added',
-      data: {
-        routine: routine,
-      },
-    });
-  }).catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  });
-};
+      message: 'Routine added successfully!',
+      data: {routine}
+    })
+  }).catch(next)
+}
 
-routineController.delete = (req, res) => {
+routineController.update = (req, res, next) => {
+  Routine.update({
+    title: req.body.title,
+    description: req.body.description,
+    genre: req.body.genre
+  }, req.params.id).then(routine => {
+    res.json({
+      message: 'Routine added successfully!',
+      data: {routine}
+    })
+  }).catch(next)
+}
+
+routineController.delete = (req, res, next) => {
   Routine.destroy(req.params.id)
     .then(() => {
       res.json({
-        message: 'Yup gone',
-        data: null,
-      });
-    }).catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+        message: 'Routine deleted successfully!'
+      })
+    }).catch(next)
 }
 
-module.exports = routineController;
+module.exports = routineController
