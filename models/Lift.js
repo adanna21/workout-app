@@ -2,7 +2,7 @@ const db = require('../db/config');
 
 const Lift = {};
 
-Lift.findById(id){
+Lift.findById = (id) => {
   return db.one(`
     INSERT INTO lift
     (name, password_digest)
@@ -15,4 +15,4 @@ Lift.findById(id){
   ]);
 }
 
-module.exports = User;
+module.exports = Lift;

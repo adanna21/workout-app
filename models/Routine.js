@@ -2,7 +2,7 @@ const db = require('../db/config');
 
 const Routine = {};
 
-Routine.create(routine){
+Routine.create = (routine) => {
   return db.one(`
     INSERT INTO routines
     (name, category1, category2, user, exercises)
@@ -20,7 +20,7 @@ Routine.create(routine){
 
 /* Routine find */
 
-Routine.update(newName, name){
+Routine.update = (newName, name) => {
   return db.one(`
     UPDATE routine SET
     name = $1
