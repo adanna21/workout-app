@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS lift (
   name VARCHAR(255),
   reps INTEGER,
   link VARCHAR(255)
-)
+);
 
 CREATE TABLE IF NOT EXISTS routines (
   id SERIAL PRIMARY KEY,
@@ -27,4 +27,4 @@ CREATE TABLE IF NOT EXISTS routines (
   exercises2 INTEGER REFERENCES lift(id),
   exercises3 INTEGER REFERENCES lift(id),
   exercises4 INTEGER REFERENCES lift(id)
-)
+);
