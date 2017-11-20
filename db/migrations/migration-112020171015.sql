@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS routines;
 CREATE TABLE IF NOT EXISTS users (
   id SERIAL PRIMARY KEY,
   username VARCHAR(255) UNIQUE NOT NULL,
-  password_digest TEXT NOT NULL,
+  password_digest TEXT NOT NULL
 );
 
 CREATE TABLE IF NOT EXISTS lift (
@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS lift (
   bodyPart VARCHAR(255),
   name VARCHAR(255),
   reps INTEGER,
-  link VARCHAR(255),
+  link VARCHAR(255)
 )
 
 CREATE TABLE IF NOT EXISTS routines (
@@ -26,5 +26,5 @@ CREATE TABLE IF NOT EXISTS routines (
   exercises1 INTEGER REFERENCES lift(id),
   exercises2 INTEGER REFERENCES lift(id),
   exercises3 INTEGER REFERENCES lift(id),
-  exercises4 INTEGER REFERENCES lift(id),
+  exercises4 INTEGER REFERENCES lift(id)
 )
