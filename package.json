@@ -9,7 +9,14 @@
     "morgan": "^1.9.0",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "express": "^4.16.2",
     "pg-promise": "^7.3.2"
-  }
+  },
+  "name": "iLift",
+  "version": "1.0.0",
+  "description": "workout app for those who want aggregated workouts",
+  "main": "server.js",
+  "repository": "git@github.com:adanna21/workout-app.git",
+  "author": "Adanna Omatu <adaomatu@gmail.com>",
+  "license": "MIT",
+  "private": false
 }
