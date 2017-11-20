@@ -80,4 +80,4 @@ INSERT INTO lift (type, bodyPart, name, sets, reps, link ) VALUES
 ('calisthenics', 'delts', 'YTWL', 5, 10, 'https://www.youtube.com/watch?v=tbvq18eKJ5Q'),
 ('calisthenics', 'delts', 'Pushup Planks', 5, 10, 'https://www.youtube.com/watch?v=dh34hajCVyk'),
 ('calisthenics', 'delts', 'Pull Ups', 5, 10, 'https://www.youtube.com/watch?v=bAEua0zu_74'),
-('calisthenics', 'delts', 'Pullup Iso Hold', 5, 10, 'https://www.youtube.com/watch?v=MzE0f1VEiUA'),
+('calisthenics', 'delts', 'Pullup Iso Hold', 5, 10, 'https://www.youtube.com/watch?v=MzE0f1VEiUA')
