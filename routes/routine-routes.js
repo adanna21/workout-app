@@ -1,7 +1,7 @@
 const express = require('express')
 
 const routineRouter = express.Router()
-const routineController = require('../controllers/routine-controller')
+const routineController = require('../controllers/routineController')
 
 routineRouter.route('/')
   .get(routineController.index)

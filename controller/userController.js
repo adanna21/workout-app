@@ -1,90 +1,26 @@
-const User = require('../models/User');
+const bcrypt = require('bcryptjs')
+const User = require('../models/User')
 
-const userController = {};
+const usersController = {}
 
-userController.index = (req, res) => {
-  User.findAll()
-    .then(user => {
-      res.json({
-        message: 'ok',
+usersController.create = (req, res, next) => {
+  const salt = bcrypt.genSaltSync()
+  const hash = bcrypt.hashSync(req.body.password, salt)
+  User.create({
+    username: req.body.username,
+    password_digest: hash
+  }).then(user => {
+    req.login(user, (err) => {
+      if (err) return next(err)
+      res.status(201).json({
+        message: 'user successfully created',
+        auth: true,
         data: {
-          user: user,
-        },
-      });
-    }).catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-};
-
-userController.show = (req, res) => {
-  User.findById(req.params.id)
-    .then(user => {
-      res.json({
-        message: 'ok',
-        data: {
-          user: user,
-        },
-      });
-    }).catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-};
-
-userController.create = (req, res) => {
-  Flashcard.create({
-      type: req.body.type,
-      bodyPart: req.body.bodyPart,
-      name: req.body.name,
-      reps: req.body.reps,
-      link: req.body.link,
+          user
+        }
+      })
     })
-    .then(user => {
-      res.json({
-        message: 'Yup added',
-        data: {
-          user: user,
-        },
-      });
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-};
-
-userController.update = (req, res) => {
-  User.update({
-    type: req.body.type,
-    bodyPart: req.body.bodyPart,
-    name: req.body.name,
-    reps: req.body.reps,
-    link: req.body.link,
-  }, req.params.id).then(lift => {
-    res.json({
-      message: 'Yup added',
-      data: {
-        user: user,
-      },
-    });
-  }).catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  });
-};
-
-userController.delete = (req, res) => {
-  User.destroy(req.params.id)
-    .then(() => {
-      res.json({
-        message: 'Yup gone',
-        data: null,
-      });
-    }).catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+  }).catch(next)
 }
 
-module.exports = userController;
+module.exports = usersController

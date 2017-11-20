@@ -1,7 +1,7 @@
 const express = require('express')
 
 const liftRouter = express.Router()
-const liftController = require('../controllers/lift-controller')
+const liftController = require('../controllers/liftController')
 
 liftRouter.route('/')
   .get(liftController.index)
