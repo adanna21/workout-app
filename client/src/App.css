@@ -1,0 +1,55 @@
+
+
+/*OUR CSS*/
+
+.App{
+display: flex;
+flex-direction: column;
+text-align: center;
+}
+
+
+.button{
+display: flex;
+justify-content: center;
+flex-direction: row;
+
+}
+
+.button2{
+  height: 30px;
+  width:10vw;
+  margin: 10px;
+}
+
+.button3{
+  height: 30px;
+  width:10vw;
+  margin: 10px;
+}
+
+header{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+
+.logo{
+  display: flex;
+  height:300px;
+  flex:1;
+  margin:5px;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li{
+  margin:10px;
+}
