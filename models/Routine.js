@@ -2,6 +2,13 @@ const db = require('../db/config');
 
 const Routine = {};
 
+Routine.findAll = () => {
+  return db.query(`
+    SELECT *
+    FROM routines
+  `);
+}
+
 Routine.create = (routine) => {
   return db.one(`
     INSERT INTO routines
@@ -17,8 +24,6 @@ Routine.create = (routine) => {
     routine.exercises,
   ]);
 }
-
-/* Routine find */
 
 Routine.update = (newName, name) => {
   return db.one(`
