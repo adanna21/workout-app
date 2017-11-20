@@ -1,5 +1,5 @@
 const passport = require('passport');
-const Player = require('../../models/Player');
+const Player = require('../../models/User');
 
 module.exports = () => {
 
