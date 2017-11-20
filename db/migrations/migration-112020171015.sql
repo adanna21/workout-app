@@ -13,6 +13,7 @@ CREATE TABLE IF NOT EXISTS lift (
   type VARCHAR(255),
   bodyPart VARCHAR(255),
   name VARCHAR(255),
+  sets INTEGER,
   reps INTEGER,
   link VARCHAR(255)
 );
