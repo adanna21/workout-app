@@ -1,14 +1,14 @@
-const Lift = require('../models/Lift');
+const Routine = require('../models/Routine');
 
-const liftsController = {};
+const routineController = {};
 
-liftsController.index = (req, res) => {
-  Lift.findAll()
-    .then(lifts => {
+routineController.index = (req, res) => {
+  Routine.findAll()
+    .then(routine => {
       res.json({
         message: 'ok',
         data: {
-          lifts: lifts,
+          routine: routine,
         },
       });
     }).catch(err => {
@@ -17,13 +17,13 @@ liftsController.index = (req, res) => {
     });
 };
 
-liftsController.show = (req, res) => {
-  Lift.findById(req.params.id)
-    .then(lifts => {
+routineController.show = (req, res) => {
+  Routine.findById(req.params.id)
+    .then(routine => {
       res.json({
         message: 'ok',
         data: {
-          lifts: lifts,
+          routine: routine,
         },
       });
     }).catch(err => {
@@ -32,7 +32,7 @@ liftsController.show = (req, res) => {
     });
 };
 
-liftsController.create = (req, res) => {
+routineController.create = (req, res) => {
   Flashcard.create({
       type: req.body.type,
       bodyPart: req.body.bodyPart,
@@ -40,11 +40,11 @@ liftsController.create = (req, res) => {
       reps: req.body.reps,
       link: req.body.link,
     })
-    .then(lifts => {
+    .then(routine => {
       res.json({
         message: 'Yup added',
         data: {
-          lifts: lifts,
+          routine: routine,
         },
       });
     })
@@ -54,8 +54,8 @@ liftsController.create = (req, res) => {
     });
 };
 
-liftsController.update = (req, res) => {
-  Lifts.update({
+routineController.update = (req, res) => {
+  Routine.update({
     type: req.body.type,
     bodyPart: req.body.bodyPart,
     name: req.body.name,
@@ -65,7 +65,7 @@ liftsController.update = (req, res) => {
     res.json({
       message: 'Yup added',
       data: {
-        lifts: lifts,
+        routine: routine,
       },
     });
   }).catch(err => {
@@ -74,8 +74,8 @@ liftsController.update = (req, res) => {
   });
 };
 
-liftsController.delete = (req, res) => {
-  Flashcard.destroy(req.params.id)
+routineController.delete = (req, res) => {
+  Routine.destroy(req.params.id)
     .then(() => {
       res.json({
         message: 'Yup gone',
@@ -87,4 +87,4 @@ liftsController.delete = (req, res) => {
     });
 }
 
-module.exports = liftsController;
+module.exports = routineController;
