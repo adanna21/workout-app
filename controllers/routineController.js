@@ -24,9 +24,13 @@ routineController.show = (req, res, next) => {
 
 routineController.create = (req, res, next) => {
   Routine.create({
-    title: req.body.title,
-    description: req.body.description,
-    genre: req.body.genre
+    name: req.body.name,
+    type: req.body.type,
+    bodyPart: req.body.bodyPart,
+    exercises1: req.body.exercises1,
+    exercises2: req.body.exercises2,
+    exercises3: req.body.exercises3,
+    exercises4: req.body.exercises4
   }, req.user.id).then(routine => {
     res.json({
       message: 'Routine added successfully!',
@@ -37,9 +41,13 @@ routineController.create = (req, res, next) => {
 
 routineController.update = (req, res, next) => {
   Routine.update({
-    title: req.body.title,
-    description: req.body.description,
-    genre: req.body.genre
+    name: req.body.name,
+    type: req.body.type,
+    bodyPart: req.body.bodyPart,
+    exercises1: req.body.exercises1,
+    exercises2: req.body.exercises2,
+    exercises3: req.body.exercises3,
+    exercises4: req.body.exercises4
   }, req.params.id).then(routine => {
     res.json({
       message: 'Routine added successfully!',
