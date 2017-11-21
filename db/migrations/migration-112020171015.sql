@@ -8,6 +8,9 @@ CREATE TABLE IF NOT EXISTS users (
   password_digest TEXT NOT NULL
 );
 
+ALTER TABLE routines
+ADD COLUMN user_id INTEGER REFERENCES users(id);
+
 CREATE TABLE IF NOT EXISTS lift (
   id SERIAL PRIMARY KEY,
   type VARCHAR(255),
