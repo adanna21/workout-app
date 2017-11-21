@@ -1,6 +1,7 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class AppController extends Component {
+
   constructor(props) {
     super(props) {
       this.state = {
@@ -10,7 +11,6 @@ class AppController extends Component {
       }
     }
   }
-
 
   componentDidMount(){
     fetch('api/lift')
@@ -23,21 +23,13 @@ class AppController extends Component {
     }).catch(err => console.log(err));
   }
 
-  switchRender(){
-    switch(this.state.currentPage) {
-      case
-      return
-      break;
-    }
+  render() {
+    return(
+      <div className = "container">
+      <Categories exerciseData={this.state.excersiceData} />
+      </div>
+    )
   }
-
-render() {
-  return(
-    <div className = "container">
-<Categories exerciseData = {this.state.excersiceData} />
-    </div>
-  )
-}
 }
 
 export default AppController
