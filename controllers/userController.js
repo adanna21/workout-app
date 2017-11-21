@@ -8,6 +8,7 @@ usersController.create = (req, res, next) => {
   const hash = bcrypt.hashSync(req.body.password, salt)
   User.create({
     username: req.body.username,
+    email: req.body.email,
     password_digest: hash
   }).then(user => {
     req.login(user, (err) => {
