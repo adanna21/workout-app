@@ -5,7 +5,7 @@ const Routine = {};
 Routine.findAll = () => {
   return db.query(`
     SELECT *
-    FROM routines
+    FROM routines WHERE id = ?
   `);
 }
 
@@ -32,5 +32,6 @@ Routine.update = (newName, name) => {
     WHERE name = $2
   `, [newName, name])
 }
+
 
 module.exports = Routine;
