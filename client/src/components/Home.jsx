@@ -1,13 +1,14 @@
 import React from 'react';
-import {Route, Link} from 'react-router-dom';
-const Home = () => {
+import { Link } from 'react-router-dom';
+
+function Home(props){
   return (
     <div className="home">
       <h1>LIFT</h1>
       <h3>Where would you like to start today?</h3>
       <div className='button'>
-        <button className="button2"><Link to="/categories">Weights</Link></button>
-        <button className="button3">Calisthenics</button>
+        <Link className='button2' to="/categories" onClick={() => props.getExerciseType("weight")}>Weights</Link>
+        <Link className='button3' to="/categories" onClick={() => props.getExerciseType("calisthenics")}>Calisthenics</Link>
       </div>
     </div>
   );
