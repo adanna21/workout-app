@@ -119,6 +119,7 @@ class App extends Component {
         <div className='App'>
           <Header
             logout={this.logout}
+            user={this.state.user}
           />
           <Route exact path='/' component={Home} />
           {/* <div className='container'> */}
