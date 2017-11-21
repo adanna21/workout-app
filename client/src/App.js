@@ -1,29 +1,29 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import './App.css';
-
-import Home from './components/Home';
-import Header from './components/Header';
-import Categories from './components/Categories';
-
-
-class App extends Component {
-  render() {
-    return (
-      <Router>
-        <div className="App">
-          <Header />
-          <Route exact path="/" component={Home} />
-          <Route exact path="/categories" component={Categories} />
-
-
-        </div>
-      </Router>
-    )
-  }
-}
-
-export default App;
+// import React, { Component } from 'react';
+// import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+// import './App.css';
+//
+// import Home from './components/Home';
+// import Header from './components/Header';
+// import Categories from './components/Categories';
+//
+//
+// class App extends Component {
+//   render() {
+//     return (
+//       <Router>
+//         <div className="App">
+//           <Header />
+//           <Route exact path="/" component={Home} />
+//           <Route exact path="/categories" component={Categories} />
+//
+//
+//         </div>
+//       </Router>
+//     )
+//   }
+// }
+//
+// export default App;
 
 import React, { Component } from 'react'
 import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom'
@@ -124,13 +124,13 @@ class App extends Component {
             <Route path='/' component={Home} />
             <Route exact path='/login' render={() => (
               this.state.auth
-              ? <Redirect to='/dashboard' />
+              ? <Redirect to='/profile' />
               : <Login handleLoginSubmit={this.handleLoginSubmit} />
             )} />
-            <Route exact path='/dashboard' render={() => (
+            <Route exact path='/profile' render={() => (
               !this.state.auth
               ? <Redirect to='/login' />
-              : <Dashboard user={this.state.user} />
+              : <Profile user={this.state.user} />
             )} />
             <Route exact path='/register' render={() => (
               this.state.auth
@@ -140,7 +140,7 @@ class App extends Component {
             <Route exact path='/exercises' render={() => <ExerciseList auth={this.state.auth} />} />
 
           </div>
-          <Footer />
+          {/* <Footer /> */}
 
         </div>
       </Router>
