@@ -13,7 +13,7 @@ class AppController extends Component {
 
 
   componentDidMount(){
-    fetch('api')
+    fetch('api/lift')
     .then (res => res.json())
     .then(res => {
       this.setState({
@@ -34,7 +34,7 @@ class AppController extends Component {
 render() {
   return(
     <div className = "container">
-      <h2>hello i am the controller</h2>
+<Categories exerciseData = {this.state.excersiceData} />
     </div>
   )
 }
