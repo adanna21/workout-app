@@ -8,7 +8,6 @@ class Register extends Component {
     this.state = {
       username: "",
       password: "",
-      email: "",
     }
     // a bind
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -40,13 +39,6 @@ class Register extends Component {
             name="password"
             value={this.state.password}
             placeholder="Password"
-            onChange={this.handleInputChange}
-          />
-          <input
-            type="email"
-            name="email"
-            value={this.state.email}
-            placeholder="e-mail"
             onChange={this.handleInputChange}
           />
           <input
