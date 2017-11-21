@@ -13,11 +13,11 @@ class AppController extends Component {
 
 
   componentDidMount(){
-    fetch('api')
+    fetch('api/lift')
     .then (res => res.json())
     .then(res => {
       this.setState({
-        exerciseData:res.data.exercises,
+        exerciseData:res.data.lifts,
         apiDataLoaded:true,
       });
     }).catch(err => console.log(err));
@@ -35,6 +35,10 @@ render() {
   return(
     <div className = "container">
       <h2>hello i am the controller</h2>
+      <ExerciseList
+        exerciseData={this.state.exerciseData}
+        apiDataLoaded={this.state.apiDataLoaded}
+       />
     </div>
   )
 }
