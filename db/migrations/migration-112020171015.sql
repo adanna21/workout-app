@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS users (
   password_digest TEXT NOT NULL
 );
 
+
 CREATE TABLE IF NOT EXISTS lift (
   id SERIAL PRIMARY KEY,
   type VARCHAR(255),
