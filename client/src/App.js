@@ -34,7 +34,7 @@ import './App.css'
 
 import Home from './components/Home'
 import Header from './components/Header'
-import Footer from './components/Footer'
+// import Footer from './components/Footer'
 import ExerciseList from './components/ExerciseList'
 const fetch = window.fetch
 
@@ -120,26 +120,26 @@ class App extends Component {
           <Header
             logout={this.logout}
           />
-          <div className='container'>
-            <Route path='/' component={Home} />
-            <Route exact path='/login' render={() => (
-              this.state.auth
-              ? <Redirect to='/profile' />
-              : <Login handleLoginSubmit={this.handleLoginSubmit} />
-            )} />
-            <Route exact path='/profile' render={() => (
-              !this.state.auth
-              ? <Redirect to='/login' />
-              : <Profile user={this.state.user} />
-            )} />
-            <Route exact path='/register' render={() => (
-              this.state.auth
-              ? <Redirect to='/profile' />
-              : <Register handleRegisterSubmit={this.handleRegisterSubmit} />
-            )} />
-            <Route exact path='/exercises' render={() => <ExerciseList auth={this.state.auth} />} />
+          <Route exact path='/' component={Home} />
+          {/* <div className='container'> */}
+          <Route exact path='/login' render={() => (
+            this.state.auth
+            ? <Redirect to='/profile' />
+            : <Login handleLoginSubmit={this.handleLoginSubmit} />
+          )} />
+          <Route exact path='/profile' render={() => (
+            !this.state.auth
+            ? <Redirect to='/login' />
+            : <Profile user={this.state.user} />
+          )} />
+          <Route exact path='/register' render={() => (
+            this.state.auth
+            ? <Redirect to='/profile' />
+            : <Register handleRegisterSubmit={this.handleRegisterSubmit} />
+          )} />
+          <Route exact path='/exercises' render={() => <ExerciseList auth={this.state.auth} />} />
 
-          </div>
+          {/* </div> */}
           {/* <Footer /> */}
 
         </div>

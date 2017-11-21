@@ -6,9 +6,10 @@ import Exercise from './Exercise'
 const ExerciseList = (props) => {
   return (
     <div className='exercise-list'>
-      {props.datanamehere.map(exercise => {
+      ExerciseList
+      {/* {props.datanamehere.map(exercise => {
         return <Exercise key={exercise.id} exercise={exercise} />
-      })}
+      })} */}
     </div>
   )
 }
