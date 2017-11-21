@@ -13,7 +13,7 @@ routineController.index = (req, res, next) => {
 }
 
 routineController.show = (req, res, next) => {
-  Routine.findById(req.params.id)
+  Routine.findByUser(req.params.user)
     .then(routine => {
       res.json({
         message: 'ok',
