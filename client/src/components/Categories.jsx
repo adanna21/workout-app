@@ -1,41 +1,24 @@
-import React, {Component} from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
+function Categories(props){
+  return(
+    <div className="button-list">
+      <div className="chest-button" onClick={() => props.getBodyType("chest")}>
+        <Link to="/routine">Chest</Link>
+      </div>
+      <div className="legs-button" onClick={() => props.getBodyType("legs")}>
+        <Link to="/routine">Legs</Link>
+      </div>
+      <div className="back-button" onClick={() => props.getBodyType("back")}>
+        <Link to="/routine">Back</Link>
+      </div>
+      <div className="delts-button" onClick={() => props.getBodyType("delts")}>
+        <Link to="/routine">Delts</Link>
+      </div>
+    </div>
+  )
 
-class Categories extends Component {
-  constructor(props) {
-    super(props)
-      this.state = {
-        exerciseData: null,
-        apiDataLoaded: false,
-        weightButton:false,
-
-      }
-    }
-
-
-weightClick(bodytype){
-  let x = this.state.exerciseData;
-  x.reduce(x=> {
-  if(bodytype === "weight"){
-    this.setState({
-      exerciseData:this.state.type,
-      apiDataLoaded:true,
-      weightButton: true,
-    });
-  }
-}).catch(err => console.log(err));
 }
 
-
-
-
-  render(){
-    
-    console.log(this.state.exerciseData)
-    return(
-      <h1>Hi categories</h1>
-    )
-  }
-}
-
-export default Categories
+export default Categories;
