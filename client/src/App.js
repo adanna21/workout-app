@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import './App.css';
-const methodOverride = require('method-override');
+
 import Home from './components/Home';
 import Header from './components/Header';
 
