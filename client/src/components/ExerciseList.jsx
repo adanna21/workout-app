@@ -16,17 +16,13 @@ import Categories from './Categories'
 function ExerciseList (props) {
   return (
     props.apiDataLoaded ?
-    <div className='exercise-list'>
-      {props.exerciseData.reduce(type => {
-        return <div key={exercise.id} exercise={exercise} />
-      })}
-      {/* <div
-        exerciseData={props.exerciseData}
-        apiDataLoaded={props.apiDataLoaded}
-      /> */}
-    </div>
+      <div className='exercise-list'>
+        {props.exerciseData.map(exercise => {
+          return <div key={exercise.id} exercise={exercise.type} />
+        })}
+      </div>
    :
-    <div>loading</div>
+      <div>loading</div>
 
   )
 }

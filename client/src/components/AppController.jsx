@@ -1,47 +1,46 @@
-import React, {Component} from 'react';
+import React, {Component} from 'react'
+import Home from './Home'
 
 class AppController extends Component {
-  constructor(props) {
-    super(props) {
-      this.state = {
-        exerciseData: null,
-        apiDataLoaded: false,
-        currentPage:null,
-      }
+  constructor (props) {
+    super(props)
+    this.state = {
+      exerciseData: null,
+      apiDataLoaded: false,
+      currentPage: null
     }
   }
 
-
-  componentDidMount(){
+  componentDidMount () {
     fetch('api/lift')
-    .then (res => res.json())
+    .then(res => res.json())
     .then(res => {
       this.setState({
-        exerciseData:res.data.lifts,
-        apiDataLoaded:true,
-      });
-    }).catch(err => console.log(err));
+        exerciseData: res.data.lifts,
+        apiDataLoaded: true
+      })
+      console.log(this.state.exerciseData)
+    }).catch(err => console.log(err))
   }
 
-  switchRender(){
-    switch(this.state.currentPage) {
-      case
-      return
-      break;
-    }
-  }
+  // switchRender(){
+  //   switch(this.state.currentPage) {
+  //     case
+  //     return
+  //     break;
+  //   }
+  // }
 
-render() {
-  return(
-    <div className = "container">
-      <h2>hello i am the controller</h2>
-      <ExerciseList
-        exerciseData={this.state.exerciseData}
-        apiDataLoaded={this.state.apiDataLoaded}
+  render () {
+    return (
+      <div className='container'>
+        <Home
+          exerciseData={this.state.exerciseData}
+          apiDataLoaded={this.state.apiDataLoaded}
        />
-    </div>
-  )
-}
+      </div>
+    )
+  }
 }
 
 export default AppController
