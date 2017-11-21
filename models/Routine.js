@@ -5,8 +5,13 @@ const Routine = {};
 Routine.findByUser = (username) => {
   return db.query(`
     SELECT *
+<<<<<<< HEAD
     FROM routines WHERE username = $1
   `,[username]);
+=======
+    FROM routines WHERE id = ?
+  `);
+>>>>>>> made find all into find by id in routine.js
 }
 
 Routine.create = (routine) => {
