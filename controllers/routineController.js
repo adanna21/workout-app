@@ -26,7 +26,7 @@ routineController.create = (req, res, next) => {
   Routine.create({
     name: req.body.name,
     type: req.body.type,
-    bodyPart: req.body.bodyPart,
+    bodypart: req.body.bodypart,
     user_id: req.body.user_id,
     exercises1: req.body.exercises1,
     exercises2: req.body.exercises2,

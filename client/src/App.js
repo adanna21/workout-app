@@ -164,7 +164,7 @@ class App extends Component {
               <Route exact path='/profile' render={() => (
                   !this.state.auth
                   ? <Redirect to='/login' />
-                  : <Profile user={this.state.user} />
+                  : <Profile user={this.state.user}/>
                 )} />
               <Route exact path='/register' render={() => (
                   this.state.auth

@@ -19,14 +19,14 @@ Routine.findByUser = (username) => {
 Routine.create = (routine) => {
   return db.one(`
     INSERT INTO routines
-    (name, type, bodyPart, user_id, exercises1, exercises2, exercises3, exercises4)
+    (name, type, bodypart, user_id, exercises1, exercises2, exercises3, exercises4)
     VALUES
     ($1, $2, $3, $4, $5, $6, $7, $8)
     RETURNING *
   `, [
     routine.name,
     routine.type,
-    routine.bodyPart,
+    routine.bodypart,
     routine.user_id,
     routine.exercises1,
     routine.exercises2,

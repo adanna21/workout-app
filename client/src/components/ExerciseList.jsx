@@ -33,7 +33,7 @@ class ExerciseList extends Component {
       body: JSON.stringify({
         name: "new Routine",
         type: routine[0].type,
-        bodyPart: routine[0].bodyPart,
+        bodypart: routine[0].bodypart,
         user_id: this.props.user.id,
         exercises1: routine[0].id,
         exercises2: routine[1].id,
