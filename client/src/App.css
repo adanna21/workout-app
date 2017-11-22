@@ -49,19 +49,38 @@ table {
 border-collapse: collapse;
 border-spacing: 0;
 }
-/*OUR CSS*/
+/*==========this is background image on body============*/
 body {
   margin: 0;
   padding: 0;
+
   background-image: url('./images/homebg.jpg');
   background-size: cover;
 
+
 }
 
+/*=======================Home=========================*/
 .App{
   display: flex;
   flex-direction: column;
   text-align: center;
+  background-color:rgba(0,0,0,0.9);
+
+}
+
+#name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 100px;
+  font-weight: bold;
+  margin:15px;
+
+}
+
+#title{
+  margin:20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
 
 }
 
@@ -83,6 +102,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-weight: bolder;
 }
+
 .button2:hover{
   color: #07F3F7;
   border:3px solid #07F3F7;
@@ -107,24 +127,22 @@ body {
   border:3px solid #07F3F7;
 
 }
-
+/*=======================Header=========================*/
 header{
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
+  background-color:rgba(0,0,0,0);
 
 
 }
 
-.logo{
-  display: flex;
-  height:200px;
-  flex:1;
-  margin:5px;
-}
+
 
 ul {
-  display: flex;
-  flex-direction: row;
+  order:1;
+  display:inline-flex;
+  justify-content: center;
   font-size: 25px;
   font-family: 'Montserrat', sans-serif;
 
@@ -137,19 +155,8 @@ li{
   margin:10px;
 }
 
-#name {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 100px;
-  font-weight: bold;
-  margin:15px;
+/*===================Categories=====================*/
 
-}
-#title{
-  margin:20px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 40px;
-
-}
 
 /*
 .videoWrapper {
