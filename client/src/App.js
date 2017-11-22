@@ -25,6 +25,8 @@ class App extends Component {
       apiDataLoaded: false,
       filteredData1: null,
       filteredData2: null,
+      selectedExercise: {},
+      instructionsClicked: false
     }
     this.handleLoginSubmit = this.handleLoginSubmit.bind(this)
     this.handleRegisterSubmit = this.handleRegisterSubmit.bind(this)
@@ -33,6 +35,7 @@ class App extends Component {
     this.getExerciseType = this.getExerciseType.bind(this)
     this.reset = this.reset.bind(this)
     this.getApiData = this.getApiData.bind(this)
+    this.selectExerciseById = this.selectExerciseById.bind(this)
   }
 
   reset () {
@@ -143,6 +146,22 @@ class App extends Component {
     })
   }
 
+  selectExerciseById (id) {
+    const exercise = this.state.apiData.find(exercise => {
+      return exercise.id === id
+    }) || {}
+    this.setState({
+      selectedExercise: exercise,
+      instructionsClicked: true
+    })
+  }
+  // changeInsClicked () {
+  //   // console.log(this.props.exercise.link);
+  //   this.setState({
+  //     instructionsClicked: true
+  //   })
+  // }
+
   render () {
     return (
       <Router>
@@ -177,10 +196,12 @@ class App extends Component {
               <Route exact path='/routine' render={(props) =>
                 <ExerciseList
                   apiData={this.state.filteredData2}
-                  auth={this.state.auth} />
+                  auth={this.state.auth}
+                  selectExerciseById={this.selectExerciseById}
+                 />
                     } />
               <Route exact path='/instructions/:exerciseId' render={(props) =>
-                <Instructions auth={this.state.auth} apiData={this.state.filteredData2}/>
+                <Instructions auth={this.state.auth} apiData={this.state.filteredData2} selectedExercise={this.state.selectedExercise} />
                     } />
             </div>
            ) : (
