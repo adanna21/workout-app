@@ -5,33 +5,26 @@ const Routine = {};
 Routine.findByUser = (username) => {
   return db.query(`
     SELECT *
-<<<<<<< HEAD
-<<<<<<< HEAD
     FROM routines WHERE username = $1
   `,[username]);
-=======
-    FROM routines WHERE id = ?
-  `);
->>>>>>> made find all into find by id in routine.js
-=======
-    FROM routines WHERE username = $1
-  `,[username]);
->>>>>>> deleted image, fixed controller and routine to be get by user
 }
 
 Routine.create = (routine) => {
   return db.one(`
     INSERT INTO routines
-    (name, category1, category2, user, exercises)
+    (name, type, bodyPart, user_id, exercises1, exercises2, exercises3, exercises4)
     VALUES
-    ($1, $2, $3, $4, $5)
+    ($1, $2, $3, $4, $5, $6, $7, $8)
     RETURNING *
   `, [
     routine.name,
-    routine.category1,
-    routine.category2,
-    routine.user,
-    routine.exercises,
+    routine.type,
+    routine.bodyPart,
+    routine.user_id,
+    routine.exercises1,
+    routine.exercises2,
+    routine.exercises3,
+    routine.exercises4
   ]);
 }
 

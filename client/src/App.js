@@ -174,10 +174,11 @@ class App extends Component {
               <Route exact path='/categories' render={(props) =>
                 <Categories getBodyType={this.getBodyType} />
                     } />
-              <Route exact path='/routine' render={(props) =>
-                <ExerciseList
-                  apiData={this.state.filteredData2}
-                  auth={this.state.auth} />
+                <Route exact path="/routine" render={(props) =>
+                      <ExerciseList
+                        apiData={this.state.filteredData2}
+                        auth={this.state.auth}
+                        user={this.state.user} />
                     } />
             </div>
            ) : (

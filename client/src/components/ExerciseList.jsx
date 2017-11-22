@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 
 import Exercise from './Exercise'
 
@@ -7,6 +7,7 @@ class ExerciseList extends Component {
   constructor(props){
     super(props);
     this.getUnique = this.getUnique.bind(this);
+    this.createNewRoutine = this.createNewRoutine.bind(this);
   }
 
   getUnique(count) {
@@ -32,6 +33,42 @@ class ExerciseList extends Component {
       </div>
     )
   }
+
+  createNewRoutine(){
+    let routine = {
+      name: "asdfgh",
+      type: "weight",
+      bodyPart: "delts",
+      user_id: this.props.user.id,
+      exercise1: "afrragrsefa",
+      exercise2: "afrragrsefa",
+      exercise3: "afrragrsefa",
+      exercise4: "afrragrsefa"
+    }
+    fetch('/api/routine', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(routine)
+    })
+    .then(res => res.json)
+    .catch(err => console.log(err))
+  }
+
+  render(){
+    console.log("user")
+    console.log(this.props.user)
+    return (
+      <div className='exercise-list'>
+        {this.props.apiData.map(exercise => {
+          return <Exercise key={exercise.id} exercise={exercise} />
+        })}
+        <button onClick={() => this.createNewRoutine()}>Save</button>
+      </div>
+    )
+  }
+
 }
 
 export default ExerciseList;
