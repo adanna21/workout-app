@@ -6,11 +6,11 @@ import Profile from './components/Profile'
 import Register from './components/Register'
 import './App.css'
 
-import Home from './components/Home';
-import Header from './components/Header';
+import Home from './components/Home'
+import Header from './components/Header'
 // import Footer from './components/Footer'
-import Categories from './components/Categories';
-import ExerciseList from './components/ExerciseList';
+import Categories from './components/Categories'
+import ExerciseList from './components/ExerciseList'
 const fetch = window.fetch
 
 class App extends Component {
@@ -24,34 +24,35 @@ class App extends Component {
       apiDataLoaded: false,
       filteredData1: null,
       filteredData2: null,
+      fireRedirect: false
     }
     this.handleLoginSubmit = this.handleLoginSubmit.bind(this)
     this.handleRegisterSubmit = this.handleRegisterSubmit.bind(this)
     this.logout = this.logout.bind(this)
-    this.getBodyType = this.getBodyType.bind(this);
-    this.getExerciseType = this.getExerciseType.bind(this);
-    this.reset = this.reset.bind(this);
-    this.getApiData = this.getApiData.bind(this);
+    this.getBodyType = this.getBodyType.bind(this)
+    this.getExerciseType = this.getExerciseType.bind(this)
+    this.reset = this.reset.bind(this)
+    this.getApiData = this.getApiData.bind(this)
   }
 
-    reset(){
+  reset () {
     this.setState({
       apiData: null,
       apiDataLoaded: false,
       filteredData1: null,
-      filteredData2: null,
+      filteredData2: null
     })
   }
 
-  getApiData(){
+  getApiData () {
     fetch('/api/lift')
     .then(res => res.json())
     .then(res => {
       this.setState({
         apiData: res.data.lifts,
-        apiDataLoaded: true,
-      });
-    }).catch(err => console.log(err));
+        apiDataLoaded: true
+      })
+    }).catch(err => console.log(err))
   }
 
   componentDidMount () {
@@ -64,7 +65,7 @@ class App extends Component {
         user: res.data.user
       })
     }).catch(err => console.log(err))
-    this.getApiData();
+    this.getApiData()
   }
 
   handleLoginSubmit (e, data) {
@@ -111,33 +112,34 @@ class App extends Component {
       credentials: 'include'
     }).then(res => res.json())
     .then(res => {
+      console.log(res)
       this.setState({
         auth: res.auth
       })
     }).catch(err => console.log(err))
   }
 
-  getExerciseType(type){
-    let data = [];
+  getExerciseType (type) {
+    let data = []
     this.state.apiData.map(lift => {
-      if (lift.type === type){
+      if (lift.type === type) {
         data.push(lift)
       }
     })
     this.setState({
-      filteredData1: data,
+      filteredData1: data
     })
   }
 
-  getBodyType(bodyType){
-    let data = [];
+  getBodyType (bodyType) {
+    let data = []
     this.state.filteredData1.map(lift => {
-      if (lift.bodypart === bodyType){
+      if (lift.bodypart === bodyType) {
         data.push(lift)
       }
     })
     this.setState({
-      filteredData2: data,
+      filteredData2: data
     })
   }
 
@@ -147,39 +149,39 @@ class App extends Component {
         <div className='App'>
           <Header
             logout={this.logout}
-            user={this.state.user}
+            auth={this.state.auth}
           />
           {this.state.apiDataLoaded ? (
-              <div>
-                <Route exact path="/" render={(props) =>
-                      <Home getExerciseType={this.getExerciseType} />
+            <div>
+              <Route exact path='/' render={(props) =>
+                <Home getExerciseType={this.getExerciseType} />
                     } />
-                <Route exact path='/login' render={() => (
+              <Route exact path='/login' render={() => (
                   this.state.auth
                   ? <Redirect to='/profile' />
-                  : <Login handleLoginSubmit={this.handleLoginSubmit} />
+                  : <Login handleLoginSubmit={this.handleLoginSubmit} fireRedirect={this.state.fireRedirect} />
                 )} />
-                <Route exact path='/profile' render={() => (
+              <Route exact path='/profile' render={() => (
                   !this.state.auth
                   ? <Redirect to='/login' />
                   : <Profile user={this.state.user} />
                 )} />
-                <Route exact path='/register' render={() => (
+              <Route exact path='/register' render={() => (
                   this.state.auth
                   ? <Redirect to='/profile' />
                   : <Register handleRegisterSubmit={this.handleRegisterSubmit} />
                 )} />
-                <Route exact path="/categories" render={(props) =>
-                      <Categories getBodyType={this.getBodyType} />
+              <Route exact path='/categories' render={(props) =>
+                <Categories getBodyType={this.getBodyType} />
                     } />
-                <Route exact path="/routine" render={(props) =>
-                      <ExerciseList
-                        apiData={this.state.filteredData2}
-                        auth={this.state.auth}/>
+              <Route exact path='/routine' render={(props) =>
+                <ExerciseList
+                  apiData={this.state.filteredData2}
+                  auth={this.state.auth} />
                     } />
-              </div>
+            </div>
            ) : (
-            <p>Loading...</p>
+             <p>Loading...</p>
           )}
 
         </div>

@@ -2,11 +2,21 @@ const db = require('../db/config');
 
 const Routine = {};
 
-Routine.findAll = () => {
+Routine.findByUser = (username) => {
   return db.query(`
     SELECT *
-    FROM routines
+<<<<<<< HEAD
+<<<<<<< HEAD
+    FROM routines WHERE username = $1
+  `,[username]);
+=======
+    FROM routines WHERE id = ?
   `);
+>>>>>>> made find all into find by id in routine.js
+=======
+    FROM routines WHERE username = $1
+  `,[username]);
+>>>>>>> deleted image, fixed controller and routine to be get by user
 }
 
 Routine.create = (routine) => {
@@ -32,5 +42,6 @@ Routine.update = (newName, name) => {
     WHERE name = $2
   `, [newName, name])
 }
+
 
 module.exports = Routine;
