@@ -1,14 +1,15 @@
-import React from 'react';
+import React from 'react'
 
 import { Link } from 'react-router-dom'
 
-const Instructions = {props} => {
+function Instructions (props) {
+  console.log(props.apiData);
   return (
-    <div className="instructions">{this.state.instructions}
+    <div className='instructions'>
       <h2>How To</h2>
-        <iframe src={`http://www.youtube.com/embed/${this.props.instructions}`}></iframe> 
+      <iframe src={props.apiData.link} />
     </div>
   )
 }
 
-export default Instructions;
+export default Instructions

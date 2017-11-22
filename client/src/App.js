@@ -10,6 +10,7 @@ import Home from './components/Home'
 import Header from './components/Header'
 // import Footer from './components/Footer'
 import Categories from './components/Categories'
+import Instructions from './components/Instructions'
 import ExerciseList from './components/ExerciseList'
 const fetch = window.fetch
 
@@ -178,6 +179,9 @@ class App extends Component {
                 <ExerciseList
                   apiData={this.state.filteredData2}
                   auth={this.state.auth} />
+                    } />
+              <Route exact path='/instructions/:exerciseId' render={(props) =>
+                <Instructions auth={this.state.auth} apiData={this.state.filteredData2}/>
                     } />
             </div>
            ) : (
