@@ -40,10 +40,10 @@ class ExerciseList extends Component {
       type: "weight",
       bodyPart: "delts",
       user_id: this.props.user.id,
-      exercise1: "afrragrsefa",
-      exercise2: "afrragrsefa",
-      exercise3: "afrragrsefa",
-      exercise4: "afrragrsefa"
+      exercise1: 1,
+      exercise2: 3,
+      exercise3: 4,
+      exercise4: 9
     }
     fetch('/api/routine', {
       method: 'POST',
