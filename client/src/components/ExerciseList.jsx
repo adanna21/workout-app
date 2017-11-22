@@ -6,7 +6,6 @@ class ExerciseList extends Component {
 
   constructor(props){
     super(props);
-<<<<<<< HEAD
     this.getUnique = this.getUnique.bind(this);
     this.createNewRoutine = this.createNewRoutine.bind(this);
   }
@@ -26,28 +25,11 @@ class ExerciseList extends Component {
   }
 
   createNewRoutine(routine){
-=======
-    this.createNewRoutine = this.createNewRoutine.bind(this);
-  }
-
-  createNewRoutine(){
-    let routine = {
-      name: "asdfgh",
-      type: "weight",
-      bodyPart: "delts",
-      user_id: this.props.user.id,
-      exercise1: "afrragrsefa",
-      exercise2: "afrragrsefa",
-      exercise3: "afrragrsefa",
-      exercise4: "afrragrsefa"
-    }
->>>>>>> trying to do routineslist and related stuff
     fetch('/api/routine', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-<<<<<<< HEAD
       body: JSON.stringify({
         name: "new Routine",
         type: routine[0].type,
@@ -58,16 +40,12 @@ class ExerciseList extends Component {
         exercises3: routine[2].id,
         exercises4: routine[3].id
       })
-=======
-      body: JSON.stringify(routine)
->>>>>>> trying to do routineslist and related stuff
     })
     .then(res => res.json)
     .catch(err => console.log(err))
   }
 
   render(){
-<<<<<<< HEAD
     let dummy = this.getUnique(4);
     console.log("dummy")
     console.log(dummy)
@@ -79,17 +57,6 @@ class ExerciseList extends Component {
         {this.props.user ? (<button onClick={() => this.createNewRoutine(dummy)}>Save</button>) : (
           <p>Please log in to save</p>
         )}
-
-=======
-    console.log("user")
-    console.log(this.props.user)
-    return (
-      <div className='exercise-list'>
-        {this.props.apiData.map(exercise => {
-          return <Exercise key={exercise.id} exercise={exercise} />
-        })}
-        <button onClick={() => this.createNewRoutine()}>Save</button>
->>>>>>> trying to do routineslist and related stuff
       </div>
     )
   }

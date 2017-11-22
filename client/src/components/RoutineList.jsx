@@ -4,12 +4,6 @@ function RoutineList(props){
   console.log("+++ routinelist +++")
   console.log(props)
 
-<<<<<<< HEAD
-  return(
-    <div className="routine-list">
-      <ul>
-        {props.apiData.map(routine => {
-=======
   let dummyList = [
   {
     id: 1,
@@ -49,7 +43,6 @@ function RoutineList(props){
     <div className="routine-list">
       <ul>
         {dummyList.map(routine => {
->>>>>>> trying to do routineslist and related stuff
           if (routine.user === props.user_id){
             return (
               <div>
