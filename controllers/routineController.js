@@ -27,11 +27,12 @@ routineController.create = (req, res, next) => {
     name: req.body.name,
     type: req.body.type,
     bodyPart: req.body.bodyPart,
+    user_id: req.body.user_id,
     exercises1: req.body.exercises1,
     exercises2: req.body.exercises2,
     exercises3: req.body.exercises3,
     exercises4: req.body.exercises4
-  }, req.user.id).then(routine => {
+  }).then(routine => {
     res.json({
       message: 'Routine added successfully!',
       data: {routine}

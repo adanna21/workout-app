@@ -2,6 +2,13 @@ const db = require('../db/config');
 
 const Routine = {};
 
+Routine.findAll = () => {
+  return db.query(`
+    SELECT *
+    FROM routines
+  `);
+}
+
 Routine.findByUser = (username) => {
   return db.query(`
     SELECT *

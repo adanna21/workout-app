@@ -30,7 +30,16 @@ class ExerciseList extends Component {
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(routine)
+      body: JSON.stringify({
+        name: "new Routine",
+        type: routine[0].type,
+        bodyPart: routine[0].bodyPart,
+        user_id: this.props.user.id,
+        exercises1: routine[0].id,
+        exercises2: routine[1].id,
+        exercises3: routine[2].id,
+        exercises4: routine[3].id
+      })
     })
     .then(res => res.json)
     .catch(err => console.log(err))
@@ -38,14 +47,17 @@ class ExerciseList extends Component {
 
   render(){
     let dummy = this.getUnique(4);
-    console.log("user")
-    console.log(this.props.user)
+    console.log("dummy")
+    console.log(dummy)
     return (
       <div className='exercise-list'>
         {dummy.map(exercise => {
           return <Exercise key={exercise.id} exercise={exercise} />
         })}
-        <button onClick={() => this.createNewRoutine(dummy)}>Save</button>
+        {this.props.user ? (<button onClick={() => this.createNewRoutine(dummy)}>Save</button>) : (
+          <p>Please log in to save</p>
+        )}
+
       </div>
     )
   }
