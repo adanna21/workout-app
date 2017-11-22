@@ -1,16 +1,16 @@
-
 import React from 'react'
 
 import Exercise from './Exercise'
 
-const ExerciseList = (props) => {
+function ExerciseList(props){
+  console.log(props)
   return (
     <div className='exercise-list'>
-      {props.datanamehere.map(exercise => {
+      {props.apiData.map(exercise => {
         return <Exercise key={exercise.id} exercise={exercise} />
       })}
     </div>
   )
 }
 
-export default ExerciseList
+export default ExerciseList;

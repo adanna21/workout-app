@@ -2,17 +2,15 @@
 /*OUR CSS*/
 
 .App{
-display: flex;
-flex-direction: column;
-text-align: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 
-
 .button{
-display: flex;
-justify-content: center;
-flex-direction: row;
-
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
 }
 
 .button2{
@@ -33,7 +31,6 @@ header{
   justify-content: flex-end;
 }
 
-
 .logo{
   display: flex;
   height:300px;
@@ -52,6 +49,7 @@ ul {
 li{
   margin:10px;
 }
+
 /*
 .videoWrapper {
 	position: relative;
