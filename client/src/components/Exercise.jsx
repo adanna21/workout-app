@@ -11,6 +11,9 @@ class Exercise extends Component {
     return (
       <div className='exercise-card'>
         <h3>{this.props.exercise.name}</h3>
+        <p>{this.props.exercise.sets}</p>
+        <p>{this.props.exercise.reps}</p>
+        <button>Instructions</button>
       </div>
     )
   }
