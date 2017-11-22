@@ -113,6 +113,7 @@ class App extends Component {
       credentials: 'include'
     }).then(res => res.json())
     .then(res => {
+      console.log(res)
       this.setState({
         auth: res.auth
       })
@@ -149,7 +150,7 @@ class App extends Component {
         <div className='App'>
           <Header
             logout={this.logout}
-            user={this.state.user}
+            auth={this.state.auth}
           />
           {this.state.apiDataLoaded ? (
             <div>
