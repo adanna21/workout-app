@@ -164,7 +164,7 @@ class App extends Component {
               <Route exact path='/profile' render={() => (
                   !this.state.auth
                   ? <Redirect to='/login' />
-                  : <Profile user={this.state.user} />
+                  : <Profile user={this.state.user}/>
                 )} />
               <Route exact path='/register' render={() => (
                   this.state.auth
@@ -174,10 +174,11 @@ class App extends Component {
               <Route exact path='/categories' render={(props) =>
                 <Categories getBodyType={this.getBodyType} />
                     } />
-              <Route exact path='/routine' render={(props) =>
-                <ExerciseList
-                  apiData={this.state.filteredData2}
-                  auth={this.state.auth} />
+                <Route exact path="/routine" render={(props) =>
+                      <ExerciseList
+                        apiData={this.state.filteredData2}
+                        auth={this.state.auth}
+                        user={this.state.user} />
                     } />
             </div>
            ) : (
