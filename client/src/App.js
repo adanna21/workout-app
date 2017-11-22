@@ -25,7 +25,6 @@ class App extends Component {
       apiDataLoaded: false,
       filteredData1: null,
       filteredData2: null,
-      fireRedirect: false
     }
     this.handleLoginSubmit = this.handleLoginSubmit.bind(this)
     this.handleRegisterSubmit = this.handleRegisterSubmit.bind(this)
