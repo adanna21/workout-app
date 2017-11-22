@@ -15,7 +15,7 @@ class ExerciseList extends Component {
     const tmp = this.props.apiData.slice();
     const ret = [];
 
-    for (const i = 0; i < count; i++) {
+    for (let i = 0; i < count; i++) {
       const index = Math.floor(Math.random() * tmp.length);
       const removed = tmp.splice(index, 1);
       // Since we are only removing one element
@@ -24,27 +24,7 @@ class ExerciseList extends Component {
     return ret;
   }
 
-  render(){
-    return (
-      <div className='exercise-list'>
-        {this.getUnique(4).map(exercise => {
-          return <Exercise key={exercise.id} exercise={exercise} />
-        })}
-      </div>
-    )
-  }
-
-  createNewRoutine(){
-    let routine = {
-      name: "asdfgh",
-      type: "weight",
-      bodyPart: "delts",
-      user_id: this.props.user.id,
-      exercise1: 1,
-      exercise2: 3,
-      exercise3: 4,
-      exercise4: 9
-    }
+  createNewRoutine(routine){
     fetch('/api/routine', {
       method: 'POST',
       headers: {
@@ -57,14 +37,15 @@ class ExerciseList extends Component {
   }
 
   render(){
+    let dummy = this.getUnique(4);
     console.log("user")
     console.log(this.props.user)
     return (
       <div className='exercise-list'>
-        {this.props.apiData.map(exercise => {
+        {dummy.map(exercise => {
           return <Exercise key={exercise.id} exercise={exercise} />
         })}
-        <button onClick={() => this.createNewRoutine()}>Save</button>
+        <button onClick={() => this.createNewRoutine(dummy)}>Save</button>
       </div>
     )
   }
