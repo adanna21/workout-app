@@ -25,8 +25,6 @@ class Login extends Component {
 
   // rendering form
   render () {
-    // const { from } = this.props.location || '/'
-    // const { fireRedirect } = this.props.fireRedirect
     return (
       <div>
         <form onSubmit={(e) => this.props.handleLoginSubmit(e, this.state)}>
@@ -49,8 +47,6 @@ class Login extends Component {
             value='Log In!'
           />
         </form>
-        {/* {fireRedirect && (
-        <Redirect to={from || `/profile`} />)} */}
       </div>
     )
   }
