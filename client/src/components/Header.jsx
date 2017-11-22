@@ -14,6 +14,7 @@ const Header = (props) => {
             <li><Link to='/login' style={{ textDecoration: 'none'}}>Logout</Link></li>
             <li><Link to='/workouts' style={{ textDecoration: 'none'}}>Workouts</Link></li>
             <li><Link to='/routine' style={{ textDecoration: 'none'}}>Add Routine</Link></li>
+
           </ul>
         </nav>
       :
