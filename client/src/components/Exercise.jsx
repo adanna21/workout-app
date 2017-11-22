@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 class Exercise extends Component {
-  construcor (props) {
+  constructor (props) {
     super(props)
     // this.state = {
     //
@@ -10,7 +10,7 @@ class Exercise extends Component {
   render () {
     return (
       <div className='exercise-card'>
-        <p>{this.props.exercise.name}</p>
+        <h3>{this.props.exercise.name}</h3>
       </div>
     )
   }
