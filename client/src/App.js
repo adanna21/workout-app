@@ -82,8 +82,7 @@ class App extends Component {
       console.log(res)
       this.setState({
         auth: res.auth,
-        user: res.data.user,
-        fireRedirect: true
+        user: res.data.user
       })
     }).catch(err => console.log(err))
   }
