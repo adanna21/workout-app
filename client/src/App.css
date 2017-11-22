@@ -1,10 +1,91 @@
+/*reset css*/
 
-/*OUR CSS*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+}
 
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+display: block;
+}
+
+body {
+line-height: 1;
+}
+
+ol, ul {
+list-style: none;
+}
+
+blockquote, q {
+quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+content: '';
+content: none;
+}
+
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+/*==========this is background image on body============*/
+body {
+  margin: 0;
+  padding: 0;
+
+  background-image: url('./images/homebg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+
+}
+
+/*=======================Home=========================*/
 .App{
   display: flex;
   flex-direction: column;
   text-align: center;
+
+
+}
+.home{
+margin-top: 15%;
+}
+
+#name {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 100px;
+  font-weight: bold;
+  margin:15px;
+
+}
+
+#title{
+  margin:20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+
 }
 
 .button{
@@ -17,39 +98,123 @@
   height: 30px;
   width:10vw;
   margin: 10px;
+  vertical-align: middle;
+  background-color: none;
+  border:3px solid black;
+  padding: 10px;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+}
+
+.button2:hover{
+  color: #07F3F7;
+  border:3px solid #07F3F7;
+
 }
 
 .button3{
   height: 30px;
   width:10vw;
   margin: 10px;
+  vertical-align: middle;
+  background-color: none;
+  border:3px solid black;
+  padding: 10px;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
 }
 
+.button3:hover{
+  color: #07F3F7;
+  border:3px solid #07F3F7;
+
+}
+/*=======================Header=========================*/
 header{
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 }
 
-.logo{
-  display: flex;
-  height:300px;
-  flex:1;
-  margin:5px;
-}
-
 ul {
-  display: flex;
-  flex-direction: row;
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  order:1;
+  display:inline-flex;
+  justify-content: center;
+  font-size: 25px;
+  font-family: 'Montserrat', sans-serif;
+
+}
+ul:hover{
+
 }
 
 li{
   margin:10px;
 }
 
+/*===================Categories=====================*/
+
+.button-list{
+display:flex;
+flex-wrap:wrap;
+justify-content: center;
+margin:20px;
+
+}
+
+.chest-button{
+  height: 30vh;
+  width:30vw;
+  margin: 10px;
+  vertical-align: middle;
+  background-color: none;
+  border:3px solid black;
+  padding: 10px;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+}
+
+.legs-button{
+  height: 30vh;
+  width:30vw;
+  margin: 10px;
+  vertical-align: middle;
+  background-color: none;
+  border:3px solid black;
+  padding: 10px;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+}
+
+.back-button{
+  height: 30vh;
+  width:30vw;
+  margin: 10px;
+  vertical-align: middle;
+  background-color: none;
+  border:3px solid black;
+  padding: 10px;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+}
+
+.delts-button{
+  height: 30vh;
+  width:30vw;
+  margin: 10px;
+  vertical-align: middle;
+  background-color: none;
+  border:3px solid black;
+  padding: 10px;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+}
 /*
 .videoWrapper {
 	position: relative;
