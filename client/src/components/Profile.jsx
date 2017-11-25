@@ -30,8 +30,6 @@ class Profile extends Component {
   }
 
   render(){
-    console.log("+++ profile +++")
-    console.log(this.props)
     return (
       <div className='profile'>
         {this.state.apiDataLoaded ? (
