@@ -2,11 +2,11 @@ const db = require('../db/config');
 
 const Routine = {};
 
-Routine.findAll = () => {
+Routine.findByUser = (username) => {
   return db.query(`
     SELECT *
-    FROM routines
-  `);
+    FROM routines WHERE username = $1
+  `,[username]);
 }
 
 Routine.findByUser = (username) => {
