@@ -1,62 +1,79 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-function RoutineList(props){
-  console.log("+++ routinelist +++")
-  console.log(props)
+class RoutineList extends Component {
 
-  let dummyList = [
-  {
-    id: 1,
-    user: 1,
-    exercise1: "1241",
-    exercise2: "1241",
-    exercise3: "1241",
-    exercise4: "1241",
-  },
-  {
-    id: 2,
-    user: 2,
-    exercise1: "1aewf",
-    exercise2: "12efawe1",
-    exercise3: "12afae41",
-    exercise4: "1eafwe",
-  },
-  {
-    id: 3,
-    user: 1,
-    exercise1: "13451",
-    exercise2: "1241451",
-    exercise3: "125141",
-    exercise4: "167241",
+  constructor(props){
+    super(props)
+    this.state = {
+      liftData: null,
+      liftDataLoaded: false,
+    }
+    this.updateName = this.updateName.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
-  ,{
-    id: 4,
-    user: 3,
-    exercise1: "1qwe",
-    exercise2: "qttreq1",
-    exercise3: "qerty1",
-    exercise4: "ra23r1",
-  }
-  ]
 
-  return(
-    <div className="routine-list">
-      <ul>
-        {dummyList.map(routine => {
-          if (routine.user === props.user_id){
-            return (
-              <div>
-                <p>{routine.exercise1}</p>
-                <p>{routine.exercise2}</p>
-                <p>{routine.exercise3}</p>
-                <p>{routine.exercise4}</p>
-              </div>
-            )
-          }
-        })}
-      </ul>
-    </div>
-  )
+  componentDidMount(){
+    fetch('/api/lift')
+    .then(res => res.json())
+    .then(res => {
+      this.setState({
+        liftData: res.data.lifts,
+        liftDataLoaded: true,
+      })
+    })
+    .catch(err => console.log(err))
+  }
+
+  updateName(id, name){
+    fetch(`/api/routine/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: {
+        name: name
+      }
+    })
+    .catch(err => console.log(err))
+  }
+
+  handleDelete(id){
+    fetch(`/api/routine/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .catch(err => console.log(err))
+  }
+
+  render(){
+    return(
+      <div className="routine-list">
+        {this.state.liftDataLoaded ? (
+          <ul>
+            {this.props.apiData.data.routines.map(routine => {
+              if (routine.user_id === this.props.user_id){
+                return (
+                  <div key={routine.id} className="routine-list">
+                    <p>{routine.name}</p>
+                    <p>{routine.bodypart}</p>
+                    <p>{this.state.liftData[routine.exercises1 + 1].name}</p>
+                    <p>{this.state.liftData[routine.exercises2 + 1].name}</p>
+                    <p>{this.state.liftData[routine.exercises3 + 1].name}</p>
+                    <p>{this.state.liftData[routine.exercises4 + 1].name}</p>
+                  </div>
+                )
+              }
+              return null;
+            })}
+          </ul>
+        ) : (
+          <p>Loading...</p>
+        )}
+      </div>
+    )
+  }
 }
 
 export default RoutineList;
