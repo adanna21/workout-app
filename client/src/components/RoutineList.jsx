@@ -8,6 +8,8 @@ class RoutineList extends Component {
       liftData: null,
       liftDataLoaded: false,
     }
+    this.updateName = this.updateName.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount(){
@@ -18,6 +20,29 @@ class RoutineList extends Component {
         liftData: res.data.lifts,
         liftDataLoaded: true,
       })
+    })
+    .catch(err => console.log(err))
+  }
+
+  updateName(id, name){
+    fetch(`/api/routine/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: {
+        name: name
+      }
+    })
+    .catch(err => console.log(err))
+  }
+
+  handleDelete(id){
+    fetch(`/api/routine/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
     })
     .catch(err => console.log(err))
   }

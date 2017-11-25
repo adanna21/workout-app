@@ -9,11 +9,12 @@ Routine.findAll = () => {
   `);
 }
 
-Routine.findByUser = (username) => {
-  return db.query(`
+Routine.findById = (id) => {
+  return db.one(`
     SELECT *
-    FROM routines WHERE username = $1
-  `,[username]);
+    FROM routines
+    WHERE id = $1
+  `, [id])
 }
 
 Routine.create = (routine) => {
@@ -35,13 +36,19 @@ Routine.create = (routine) => {
   ]);
 }
 
-Routine.update = (newName, name) => {
+Routine.update = (id, name) => {
   return db.one(`
-    UPDATE routine SET
+    UPDATE routines SET
     name = $1
-    WHERE name = $2
-  `, [newName, name])
+    WHERE id = $2
+  `, [name, id])
 }
 
+Routine.destroy = (id) => {
+  return db.none(`
+    DELETE FROM routines
+    WHERE id = $1
+  `, [id])
+}
 
 module.exports = Routine;
