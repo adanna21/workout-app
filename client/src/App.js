@@ -128,6 +128,7 @@ class App extends Component {
       if (lift.type === type) {
         data.push(lift)
       }
+      return null;
     })
     this.setState({
       filteredData1: data
@@ -140,6 +141,7 @@ class App extends Component {
       if (lift.bodypart === bodyType) {
         data.push(lift)
       }
+      return null;
     })
     this.setState({
       filteredData2: data
