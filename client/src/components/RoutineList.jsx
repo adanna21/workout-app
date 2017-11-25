@@ -10,7 +10,7 @@ function RoutineList(props){
         {props.apiData.map(routine => {
           if (routine.user === props.user_id){
             return (
-              <div>
+              <div className="routines">
                 <p>{routine.exercise1}</p>
                 <p>{routine.exercise2}</p>
                 <p>{routine.exercise3}</p>

@@ -179,10 +179,12 @@ margin:20px;
   font-weight: bolder;
   text-align: center;
   vertical-align: middle;
+  box-shadow: 2px 2px 2px black;
 
 }
 
 .chest-button:hover{
+  background-image: blue;
 }
 
 
@@ -199,7 +201,7 @@ margin:20px;
   font-weight: bolder;
   background-image: url('https://www.bodybuilding.com/fun/images/2015/leg-workouts-for-men-the-7-best-workouts-for-thicker-quads-glutes-and-hams-mobile-facebook-960x540.jpg');
   background-size: cover;
-  box-shadow: 10px 7px 10px black;
+  box-shadow: 2px 2px 2px black;
 }
 
 .back-button{
@@ -215,7 +217,7 @@ margin:20px;
   font-weight: bolder;
   background-image: url('https://cdn-maf0.heartyhosting.com/sites/muscleandfitness.com/files/media/charlie%20francis%20back.jpg');
   background-size: cover;
-  box-shadow: 10px 7px 10px black;
+  box-shadow: 2px 2px 2px black;
 }
 
 .delts-button{
@@ -231,7 +233,7 @@ margin:20px;
   font-weight: bolder;
   background-image: url('http://www.leanitup.com/wp-content/uploads/2015/06/5-shoulder-routines-for-3d-definition-facebook.jpg');
   background-size: cover;
-  box-shadow: 10px 7px 10px black;
+  box-shadow: 2px 2px 2px black;
 
 }
 
@@ -247,6 +249,22 @@ margin:20px;
 #text:hover{
   color: #07F3F7;
   border:3px solid #07F3F7;
+}
+
+/*=================routinelist=================*/
+
+
+p{
+margin: 5px;
+font-family: 'Montserrat', sans-serif;
+font-size: 30px;
+
+}
+
+/*================exercise list===================*/
+.exercise-list{
+  border: 2px solid black;
+  background-color: lightblue;
 }
 /*
 .videoWrapper {
