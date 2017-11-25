@@ -52,7 +52,7 @@ class ExerciseList extends Component {
     return (
       <div className='exercise-list'>
         {dummy.map(exercise => {
-          return <Exercise key={exercise.id} exercise={exercise} />
+          return <Exercise key={exercise.id} exercise={exercise} selectExerciseById={props.selectExerciseById}/>
         })}
         {this.props.user ? (<button onClick={() => this.createNewRoutine(dummy)}>Save</button>) : (
           <p>Please log in to save</p>
@@ -63,4 +63,4 @@ class ExerciseList extends Component {
 
 }
 
-export default ExerciseList;
+export default ExerciseList
