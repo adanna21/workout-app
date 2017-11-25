@@ -183,7 +183,7 @@ class App extends Component {
               <Route exact path='/profile' render={() => (
                   !this.state.auth
                   ? <Redirect to='/login' />
-                  : <Profile user={this.state.user} />
+                  : <Profile user={this.state.user}/>
                 )} />
               <Route exact path='/register' render={() => (
                   this.state.auth
@@ -198,11 +198,11 @@ class App extends Component {
                   apiData={this.state.filteredData2}
                   auth={this.state.auth}
                   selectExerciseById={this.selectExerciseById}
-                 />
+                  user={this.state.user} />
                     } />
               <Route exact path='/instructions/:exerciseId' render={(props) =>
                 <Instructions auth={this.state.auth} apiData={this.state.filteredData2} selectedExercise={this.state.selectedExercise} />
-                    } />
+              } />
             </div>
            ) : (
              <p>Loading...</p>
