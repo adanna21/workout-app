@@ -5,18 +5,8 @@ const Routine = {};
 Routine.findByUser = (username) => {
   return db.query(`
     SELECT *
-<<<<<<< HEAD
-<<<<<<< HEAD
-    FROM routines WHERE username = $1
+5    FROM routines WHERE username = $1
   `,[username]);
-=======
-    FROM routines WHERE id = ?
-  `);
->>>>>>> made find all into find by id in routine.js
-=======
-    FROM routines WHERE username = $1
-  `,[username]);
->>>>>>> deleted image, fixed controller and routine to be get by user
 }
 
 Routine.create = (routine) => {
