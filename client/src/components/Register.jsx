@@ -26,7 +26,7 @@ class Register extends Component {
   // rendering form
   render () {
     return (
-      <div>
+      <div className='form-container'>
         <form onSubmit={(e) => this.props.handleRegisterSubmit(e, this.state)}>
           <input
             type='text'

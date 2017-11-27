@@ -287,9 +287,21 @@ font-size: 30px;
 */
 
 /*================login and register===================*/
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  height: 50vh;
+  width: 40vw;
+  margin: 0 auto;
+  margin-top: 10vh;
+}
 form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+}
+input {
+  font-size: 2em;
 }
