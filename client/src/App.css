@@ -294,6 +294,24 @@ font-size: 30px;
   padding:10px;
 }
 
+#save{
+  height: 30px;
+  width:10vw;
+  margin: 10px;
+  vertical-align: middle;
+  background-color: none;
+  border:3px solid black;
+  padding: 10px;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+}
+
+#save:hover{
+  color: #07F3F7;
+  border:3px solid #07F3F7;
+}
+
 /*====================instructions===================*/
 .instructions{
 
