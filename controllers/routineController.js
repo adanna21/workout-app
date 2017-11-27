@@ -41,9 +41,7 @@ routineController.create = (req, res, next) => {
 }
 
 routineController.update = (req, res, next) => {
-  Routine.update({
-    name: req.body.name,
-  }, req.params.id)
+  Routine.update(req.body.name, req.params.id)
   .then(routine => {
     res.json({
       message: 'Routine added successfully!',
