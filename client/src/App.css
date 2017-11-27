@@ -53,12 +53,8 @@ border-spacing: 0;
 body {
   margin: 0;
   padding: 0;
-  background-color: silver;
-  /*background-image: url('./images/homebg.jpg');*/
+  background-image: url('./images/homebg.jpg');
   background-size: cover;
-  background-repeat: no-repeat;
-
-
 }
 
 /*=======================Home=========================*/
@@ -66,10 +62,9 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center;
-
-
-
 }
+
+
 .home{
 margin-top: 15%;
 }
@@ -133,6 +128,16 @@ margin-top: 15%;
   border:3px solid #07F3F7;
 
 }
+
+img{
+position:absolute;
+background-image: url('./images/homebg.jpg');
+background-size: cover;
+left:0;
+width: 100%;
+height:900px;
+z-index: -33;
+}
 /*=======================Header=========================*/
 header{
   display: flex;
@@ -173,7 +178,7 @@ margin:20px;
 .chest-button{
   height: 30vh;
   width:30vw;
-  margin: 10px;
+  margin: 20px;
   vertical-align: middle;
   border:0px solid black;
   padding: 10px;
@@ -191,7 +196,7 @@ margin:20px;
 .legs-button{
   height: 30vh;
   width:30vw;
-  margin: 10px;
+  margin: 20px;
   vertical-align: middle;
   background-color: none;
   border:0px solid black;
@@ -207,7 +212,7 @@ margin:20px;
 .back-button{
   height: 30vh;
   width:30vw;
-  margin: 10px;
+  margin: 20px;
   vertical-align: middle;
   background-color: none;
   border:0px solid black;
@@ -223,7 +228,7 @@ margin:20px;
 .delts-button{
   height: 30vh;
   width:30vw;
-  margin: 10px;
+  margin: 20px;
   vertical-align: middle;
   background-color: none;
   border:0px solid black;
@@ -254,14 +259,24 @@ margin:20px;
 }
 
 /*=================routinelist=================*/
+ul {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 
+}
 
 .routines{
-margin: 5px;
+  width: 200px;
+margin: 20px;
+padding: 10px;
+border: 2px solid black;
+background-color: yellow;
 font-family: 'Montserrat', sans-serif;
 font-size: 30px;
 
 }
+
 
 /*================exercise list===================*/
 .exercise-list{
@@ -289,8 +304,18 @@ font-size: 30px;
 iframe{
   border: 20px solid black;
 }
+/*===================profile=================*/
 
+.welcome{
+  font-size: 30px;
+  font-family: 'Montserrat', sans-serif;
+}
 
+#welcome-name{
+  font-size: 60px;
+  font-weight: bold;
+  margin:30px;
+}
 /*
 .videoWrapper {
 	position: relative;
