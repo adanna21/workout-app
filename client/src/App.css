@@ -53,8 +53,8 @@ border-spacing: 0;
 body {
   margin: 0;
   padding: 0;
-
-  background-image: url('./images/homebg.jpg');
+  background-color: silver;
+  /*background-image: url('./images/homebg.jpg');*/
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -68,6 +68,7 @@ body {
   text-align: center;
 
 
+
 }
 .home{
 margin-top: 15%;
@@ -78,6 +79,7 @@ margin-top: 15%;
   font-size: 100px;
   font-weight: bold;
   margin:15px;
+  text-shadow: 5px 3px 5px white;
 
 }
 
@@ -173,7 +175,6 @@ margin:20px;
   width:30vw;
   margin: 10px;
   vertical-align: middle;
-  background-color: none;
   border:0px solid black;
   padding: 10px;
   color: black;
@@ -189,6 +190,8 @@ margin:20px;
 
 .chest-button:hover{
   background-image: blue;
+  background-color: rgba(255, 255, 255, 0.5);
+
 }
 
 
@@ -248,17 +251,19 @@ margin:20px;
   color:white;
   border: 2px solid white;
   padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 #text:hover{
   color: #07F3F7;
   border:3px solid #07F3F7;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 /*=================routinelist=================*/
 
 
-p{
+.routines{
 margin: 5px;
 font-family: 'Montserrat', sans-serif;
 font-size: 30px;
@@ -269,7 +274,17 @@ font-size: 30px;
 .exercise-list{
   border: 2px solid black;
   background-color: lightblue;
+
 }
+
+/*====================instructions===================*/
+.instructions{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
 /*
 .videoWrapper {
 	position: relative;
