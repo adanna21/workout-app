@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 import EditName from './EditName'
 
@@ -7,7 +8,7 @@ class RoutineList extends Component {
   constructor(props){
     super(props)
     this.state = {
-      edit: false,
+      edit: null,
       liftData: null,
       liftDataLoaded: false,
     }
@@ -28,17 +29,13 @@ class RoutineList extends Component {
   }
 
   updateName(id, name){
-    console.log("id")
-    console.log(id)
-    console.log("name")
-    console.log(name)
     fetch(`/api/routine/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        name: name
+        name: name || "New Routine"
       })
     })
     .catch(err => console.log(err))
@@ -48,14 +45,14 @@ class RoutineList extends Component {
     this.props.getUserFavorites();
   }
 
-  toggleMode(){
+  toggleMode(id){
     if(this.state.edit){
       this.setState({
-        edit: false,
+        edit: null,
       })
     } else {
       this.setState({
-        edit: true,
+        edit: id,
       })
     }
   }
@@ -66,15 +63,33 @@ class RoutineList extends Component {
         {this.state.liftDataLoaded ? (
           <ul>
             {this.props.apiData.data.routines.map(routine => {
+              console.log(routine)
               if (routine.user_id === this.props.user_id){
                 return (
                   <div key={routine.id} className="routines">
-                    <EditName edit={this.state.edit} toggleMode={this.toggleMode} routineName={routine.name} updateName={this.updateName} id={routine.id}/>
+                    <EditName edit={this.state.edit} toggleMode={this.toggleMode} routineName={routine.name} updateName={this.updateName} id={routine.id} />
                     <p>{routine.bodypart}</p>
-                    <p>{this.state.liftData[routine.exercises1 + 1].name}</p>
-                    <p>{this.state.liftData[routine.exercises2 + 1].name}</p>
-                    <p>{this.state.liftData[routine.exercises3 + 1].name}</p>
-                    <p>{this.state.liftData[routine.exercises4 + 1].name}</p>
+
+                    <button onClick={() => {this.props.selectExerciseById(routine.exercises1); this.props.setSource("profile")}}>
+                    <Link to={`/instructions/${routine.exercises1}`}>
+                    {this.state.liftData[routine.exercises1 - 1].name}</Link>
+                    </button>
+
+                    <button onClick={() => {this.props.selectExerciseById(routine.exercises2); this.props.setSource("profile")}}>
+                    <Link to={`/instructions/${routine.exercises2}`}>
+                    {this.state.liftData[routine.exercises2 - 1].name}</Link>
+                    </button>
+
+                    <button onClick={() => {this.props.selectExerciseById(routine.exercises3); this.props.setSource("profile")}}>
+                    <Link to={`/instructions/${routine.exercises3}`}>
+                    {this.state.liftData[routine.exercises3 - 1].name}</Link>
+                    </button>
+
+                    <button onClick={() => {this.props.selectExerciseById(routine.exercises4); this.props.setSource("profile")}}>
+                    <Link to={`/instructions/${routine.exercises4}`}>
+                    {this.state.liftData[routine.exercises4 - 1].name}</Link>
+                    </button>
+
                     <button onClick={() => this.props.handleDelete(routine.id)}>DELETE</button>
                   </div>
                 )

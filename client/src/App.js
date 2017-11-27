@@ -28,6 +28,7 @@ class App extends Component {
       selectedExercise: {},
       instructionsClicked: false,
       savedList: null,
+      source: null,
     }
     this.handleLoginSubmit = this.handleLoginSubmit.bind(this)
     this.handleRegisterSubmit = this.handleRegisterSubmit.bind(this)
@@ -38,6 +39,13 @@ class App extends Component {
     this.getApiData = this.getApiData.bind(this)
     this.selectExerciseById = this.selectExerciseById.bind(this)
     this.saveList = this.saveList.bind(this)
+    this.setSource = this.setSource.bind(this)
+  }
+
+  setSource(location){
+    this.setState({
+      source: location
+    })
   }
 
   reset () {
@@ -150,7 +158,9 @@ class App extends Component {
 
   selectExerciseById (id) {
     const exercise = this.state.apiData.find(exercise => {
-      return exercise.id === id
+      if (exercise.id === id){
+        return exercise
+      }
     }) || {}
     this.setState({
       selectedExercise: exercise,
@@ -186,7 +196,8 @@ class App extends Component {
               <Route exact path='/profile' render={() => (
                   !this.state.auth
                   ? <Redirect to='/login' />
-                  : <Profile user={this.state.user}/>
+                  : <Profile user={this.state.user} selectExerciseById={this.selectExerciseById}
+                  setSource={this.setSource} />
                 )} />
               <Route exact path='/register' render={() => (
                   this.state.auth
@@ -206,14 +217,16 @@ class App extends Component {
                     selectExerciseById={this.selectExerciseById}
                     user={this.state.user}
                     saveList={this.saveList}
-                    savedList={this.state.savedList} />
+                    savedList={this.state.savedList}
+                    setSource={this.setSource} />
                   : <Redirect to='/' />
                 )} />
               <Route exact path='/instructions/:exerciseId' render={(props) => (
-                this.state.filteredData2
+                this.state.apiData
                   ? <Instructions auth={this.state.auth}
                     apiData={this.state.filteredData2}
-                    selectedExercise={this.state.selectedExercise} />
+                    selectedExercise={this.state.selectedExercise}
+                    source={this.state.source} />
                   : <Redirect to='/' />
                 )} />
             </div>

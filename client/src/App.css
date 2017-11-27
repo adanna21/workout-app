@@ -65,7 +65,6 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center;
-}
 
 .home{
   margin-top: 15%;
@@ -155,7 +154,7 @@ margin:20px;
 .chest-button{
   height: 30vh;
   width:30vw;
-  margin: 10px;
+  margin: 20px;
   vertical-align: middle;
   border:0px solid black;
   padding: 10px;
@@ -170,17 +169,10 @@ margin:20px;
 
 }
 
-.chest-button:hover{
-  background-image: blue;
-  background-color: rgba(255, 255, 255, 0.5);
-
-}
-
-
 .legs-button{
   height: 30vh;
   width:30vw;
-  margin: 10px;
+  margin: 20px;
   vertical-align: middle;
   background-color: none;
   border:0px solid black;
@@ -196,7 +188,7 @@ margin:20px;
 .back-button{
   height: 30vh;
   width:30vw;
-  margin: 10px;
+  margin: 20px;
   vertical-align: middle;
   background-color: none;
   border:0px solid black;
@@ -212,7 +204,7 @@ margin:20px;
 .delts-button{
   height: 30vh;
   width:30vw;
-  margin: 10px;
+  margin: 20px;
   vertical-align: middle;
   background-color: none;
   border:0px solid black;
@@ -243,30 +235,81 @@ margin:20px;
 }
 
 /*=================routinelist=================*/
+ul {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 
+}
 
 .routines{
-margin: 5px;
+  width: 200px;
+margin: 20px;
+padding: 10px;
+border: 2px solid black;
+background-color: yellow;
 font-family: 'Montserrat', sans-serif;
 font-size: 30px;
 
 }
 
+
 /*================exercise list===================*/
 .exercise-list{
+  display: flex;
+  flex-wrap: nowrap;
+  height:20vh;
   border: 2px solid black;
   background-color: lightblue;
+  padding:5px;
+}
 
+.exercise-card{
+  background-color:yellow;
+  margin:5px;
+  padding:10px;
+}
+
+#save{
+  height: 30px;
+  width:10vw;
+  margin: 10px;
+  vertical-align: middle;
+  background-color: none;
+  border:3px solid black;
+  padding: 10px;
+  color: black;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bolder;
+}
+
+#save:hover{
+  color: #07F3F7;
+  border:3px solid #07F3F7;
 }
 
 /*====================instructions===================*/
 .instructions{
+
   display:flex;
-  flex-direction: column;
   justify-content: center;
 
 }
+iframe{
+  border: 20px solid black;
+}
+/*===================profile=================*/
 
+.welcome{
+  font-size: 30px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+#welcome-name{
+  font-size: 60px;
+  font-weight: bold;
+  margin:30px;
+}
 /*
 .videoWrapper {
 	position: relative;
