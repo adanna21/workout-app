@@ -10,7 +10,7 @@ class Exercise extends Component {
         <h3>{this.props.exercise.name}</h3>
         <p>{this.props.exercise.sets}</p>
         <p>{this.props.exercise.reps}</p>
-        <button onClick={() => this.props.selectExerciseById(this.props.exercise.id)}>
+        <button onClick={() => {this.props.selectExerciseById(this.props.exercise.id); this.props.setSource("exercise")}}>
           <Link to={`/instructions/${this.props.exercise.id}`}> Instructions </Link>
         </button>
 

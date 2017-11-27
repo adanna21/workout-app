@@ -68,7 +68,7 @@ class ExerciseList extends Component {
       <div className='exercise-list'>
         {this.state.list ? (
           this.state.list.map(exercise => {
-          return <Exercise key={exercise.id} exercise={exercise} selectExerciseById={this.props.selectExerciseById} />
+          return <Exercise key={exercise.id} exercise={exercise} selectExerciseById={this.props.selectExerciseById} setSource={this.props.setSource} />
           })
         ) : (
           <p>Loading...</p>
