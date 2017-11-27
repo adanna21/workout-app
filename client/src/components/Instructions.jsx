@@ -2,6 +2,7 @@ import React from 'react'
 import Iframe from 'react-iframe'
 import { Link } from 'react-router-dom'
 
+// import { withRouter } from 'react-router-dom'
 
 function Instructions (props) {
   return (
