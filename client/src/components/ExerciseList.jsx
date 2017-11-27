@@ -66,7 +66,12 @@ class ExerciseList extends Component {
         ) : (
           <p>Loading...</p>
         )}
-        <button onClick={() => this.saveRoutine()}>Save</button>
+        {this.props.auth ? (
+          <button onClick={() => this.saveRoutine()}>Save</button>
+        ) : (
+          <p>Please log in to save.</p>
+        )
+        }
       </div>
     )
   }
