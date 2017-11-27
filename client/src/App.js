@@ -185,12 +185,12 @@ class App extends Component {
                   : <Register handleRegisterSubmit={this.handleRegisterSubmit} />
                 )} />
               <Route exact path='/categories' render={(props) => (
-                !this.state.apiData === null
+                this.state.filteredData1
                   ? <Categories getBodyType={this.getBodyType} />
                   : <Redirect to='/' />
               )} />
               <Route exact path='/routine' render={(props) => (
-                !this.state.apiData === null
+                this.state.filteredData2
                   ? <ExerciseList
                     apiData={this.state.filteredData2}
                     auth={this.state.auth}
@@ -199,7 +199,7 @@ class App extends Component {
                   : <Redirect to='/' />
                 )} />
               <Route exact path='/instructions/:exerciseId' render={(props) => (
-                !this.state.apiData === null
+                this.state.filteredData2
                   ? <Instructions auth={this.state.auth}
                     apiData={this.state.filteredData2}
                     selectedExercise={this.state.selectedExercise} />
