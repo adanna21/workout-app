@@ -34,6 +34,7 @@ class Register extends Component {
             value={this.state.username}
             placeholder='Username'
             onChange={this.handleInputChange}
+            required
           />
           <input
             type='password'
@@ -41,6 +42,7 @@ class Register extends Component {
             value={this.state.password}
             placeholder='Password'
             onChange={this.handleInputChange}
+            required
           />
           <input
             type='email'
@@ -48,6 +50,7 @@ class Register extends Component {
             value={this.state.email}
             placeholder='e-mail'
             onChange={this.handleInputChange}
+            required
           />
           <input
             type='submit'

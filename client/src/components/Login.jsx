@@ -29,11 +29,13 @@ class Login extends Component {
       <div className='form-container'>
         <form onSubmit={(e) => this.props.handleLoginSubmit(e, this.state)}>
           <input
+            className='text-input'
             type='text'
             name='username'
             value={this.state.username}
             placeholder='Username'
             onChange={this.handleInputChange}
+            required
           />
           <input
             type='password'
@@ -41,6 +43,7 @@ class Login extends Component {
             value={this.state.password}
             placeholder='Password'
             onChange={this.handleInputChange}
+            required
           />
           <input
             type='submit'
