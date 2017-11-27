@@ -188,13 +188,6 @@ margin:20px;
 
 }
 
-.chest-button:hover{
-  background-image: blue;
-  background-color: rgba(255, 255, 255, 0.5);
-
-}
-
-
 .legs-button{
   height: 30vh;
   width:30vw;
@@ -272,18 +265,31 @@ font-size: 30px;
 
 /*================exercise list===================*/
 .exercise-list{
+  display: flex;
+  flex-wrap: nowrap;
+  height:20vh;
   border: 2px solid black;
   background-color: lightblue;
+  padding:5px;
+}
 
+.exercise-card{
+  background-color:yellow;
+  margin:5px;
+  padding:10px;
 }
 
 /*====================instructions===================*/
 .instructions{
+
   display:flex;
-  flex-direction: column;
   justify-content: center;
 
 }
+iframe{
+  border: 20px solid black;
+}
+
 
 /*
 .videoWrapper {
