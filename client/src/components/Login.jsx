@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import { Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class Login extends Component {
 
@@ -28,13 +28,12 @@ class Login extends Component {
     return (
       <div className='form-container'>
         <form onSubmit={(e) => this.props.handleLoginSubmit(e, this.state)}>
-          <h1>Login to your account</h1>
+          <h1>LOGIN TO ACCOUNT</h1>
           <input
-            className='text-input'
             type='text'
             name='username'
             value={this.state.username}
-            placeholder='Username'
+            placeholder='username'
             onChange={this.handleInputChange}
             required
           />
@@ -42,13 +41,15 @@ class Login extends Component {
             type='password'
             name='password'
             value={this.state.password}
-            placeholder='Password'
+            placeholder='password'
             onChange={this.handleInputChange}
             required
           />
+          <h2>No account? <Link to='/register'>Register here</Link></h2>
           <input
             type='submit'
-            value='Log In!'
+            value='Login'
+            className='submit-btn'
           />
         </form>
       </div>
