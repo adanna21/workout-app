@@ -10,6 +10,7 @@ import Home from './components/Home'
 import Header from './components/Header'
 // import Footer from './components/Footer'
 import Categories from './components/Categories'
+import Instructions from './components/Instructions'
 import ExerciseList from './components/ExerciseList'
 const fetch = window.fetch
 
@@ -24,7 +25,8 @@ class App extends Component {
       apiDataLoaded: false,
       filteredData1: null,
       filteredData2: null,
-      fireRedirect: false
+      selectedExercise: {},
+      instructionsClicked: false
     }
     this.handleLoginSubmit = this.handleLoginSubmit.bind(this)
     this.handleRegisterSubmit = this.handleRegisterSubmit.bind(this)
@@ -33,6 +35,7 @@ class App extends Component {
     this.getExerciseType = this.getExerciseType.bind(this)
     this.reset = this.reset.bind(this)
     this.getApiData = this.getApiData.bind(this)
+    this.selectExerciseById = this.selectExerciseById.bind(this)
   }
 
   reset () {
@@ -125,6 +128,7 @@ class App extends Component {
       if (lift.type === type) {
         data.push(lift)
       }
+      return null;
     })
     this.setState({
       filteredData1: data
@@ -137,11 +141,28 @@ class App extends Component {
       if (lift.bodypart === bodyType) {
         data.push(lift)
       }
+      return null;
     })
     this.setState({
       filteredData2: data
     })
   }
+
+  selectExerciseById (id) {
+    const exercise = this.state.apiData.find(exercise => {
+      return exercise.id === id
+    }) || {}
+    this.setState({
+      selectedExercise: exercise,
+      instructionsClicked: true
+    })
+  }
+  // changeInsClicked () {
+  //   // console.log(this.props.exercise.link);
+  //   this.setState({
+  //     instructionsClicked: true
+  //   })
+  // }
 
   render () {
     return (
@@ -174,12 +195,16 @@ class App extends Component {
               <Route exact path='/categories' render={(props) =>
                 <Categories getBodyType={this.getBodyType} />
                     } />
-                <Route exact path="/routine" render={(props) =>
-                      <ExerciseList
-                        apiData={this.state.filteredData2}
-                        auth={this.state.auth}
-                        user={this.state.user} />
+              <Route exact path='/routine' render={(props) =>
+                <ExerciseList
+                  apiData={this.state.filteredData2}
+                  auth={this.state.auth}
+                  selectExerciseById={this.selectExerciseById}
+                  user={this.state.user} />
                     } />
+              <Route exact path='/instructions/:exerciseId' render={(props) =>
+                <Instructions auth={this.state.auth} apiData={this.state.filteredData2} selectedExercise={this.state.selectedExercise} />
+              } />
             </div>
            ) : (
              <p>Loading...</p>

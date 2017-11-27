@@ -1,27 +1,79 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-function RoutineList(props){
-  console.log("+++ routinelist +++")
-  console.log(props)
+class RoutineList extends Component {
 
-  return(
-    <div className="routine-list">
-      <ul>
-        {props.apiData.map(routine => {
-          if (routine.user === props.user_id){
-            return (
-              <div className="routines">
-                <p>{routine.exercise1}</p>
-                <p>{routine.exercise2}</p>
-                <p>{routine.exercise3}</p>
-                <p>{routine.exercise4}</p>
-              </div>
-            )
-          }
-        })}
-      </ul>
-    </div>
-  )
+  constructor(props){
+    super(props)
+    this.state = {
+      liftData: null,
+      liftDataLoaded: false,
+    }
+    this.updateName = this.updateName.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+
+  componentDidMount(){
+    fetch('/api/lift')
+    .then(res => res.json())
+    .then(res => {
+      this.setState({
+        liftData: res.data.lifts,
+        liftDataLoaded: true,
+      })
+    })
+    .catch(err => console.log(err))
+  }
+
+  updateName(id, name){
+    fetch(`/api/routine/${id}`, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: {
+        name: name
+      }
+    })
+    .catch(err => console.log(err))
+  }
+
+  handleDelete(id){
+    fetch(`/api/routine/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .catch(err => console.log(err))
+  }
+
+  render(){
+    return(
+      <div className="routine-list">
+        {this.state.liftDataLoaded ? (
+          <ul>
+            {this.props.apiData.data.routines.map(routine => {
+              if (routine.user_id === this.props.user_id){
+                return (
+                  <div key={routine.id} className="routines">
+                    <p>{routine.name}</p>
+                    <p>{routine.bodypart}</p>
+                    <p>{this.state.liftData[routine.exercises1 + 1].name}</p>
+                    <p>{this.state.liftData[routine.exercises2 + 1].name}</p>
+                    <p>{this.state.liftData[routine.exercises3 + 1].name}</p>
+                    <p>{this.state.liftData[routine.exercises4 + 1].name}</p>
+                  </div>
+                )
+              }
+              return null;
+            })}
+          </ul>
+        ) : (
+          <p>Loading...</p>
+        )}
+      </div>
+    )
+  }
 }
 
 export default RoutineList;

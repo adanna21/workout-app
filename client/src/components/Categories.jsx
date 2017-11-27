@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Categories(props){
   return(
@@ -18,7 +18,6 @@ function Categories(props){
       </div>
     </div>
   )
-
 }
 
-export default Categories;
+export default Categories
