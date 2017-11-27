@@ -55,7 +55,7 @@ class RoutineList extends Component {
             {this.props.apiData.data.routines.map(routine => {
               if (routine.user_id === this.props.user_id){
                 return (
-                  <div key={routine.id} className="routine-list">
+                  <div key={routine.id} className="routines">
                     <p>{routine.name}</p>
                     <p>{routine.bodypart}</p>
                     <p>{this.state.liftData[routine.exercises1 + 1].name}</p>
