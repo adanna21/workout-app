@@ -13,6 +13,13 @@ class Profile extends Component {
     }
     this.getUserFavorites = this.getUserFavorites.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.setWhich = this.setWhich.bind(this);
+  }
+
+  setWhich(id){
+    this.setState({
+      which: id
+    })
   }
 
   componentDidMount(){
@@ -51,7 +58,7 @@ class Profile extends Component {
         {this.state.apiDataLoaded ? (
           <div>
             <h2>Welcome {this.props.user.username}</h2>
-            <RoutineList apiData={this.state.apiData} user_id = {this.props.user.id} handleDelete={this.handleDelete} getUserFavorites={this.getUserFavorites}/>
+            <RoutineList apiData={this.state.apiData} user_id = {this.props.user.id} handleDelete={this.handleDelete} getUserFavorites={this.getUserFavorites} selectExerciseById={this.props.selectExerciseById} setSource={this.props.setSource} which={this.state.which} setWhich={this.setWhich}/>
           </div>
         ) : (
           <p>Loading...</p>
