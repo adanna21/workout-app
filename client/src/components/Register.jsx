@@ -28,6 +28,7 @@ class Register extends Component {
     return (
       <div className='form-container'>
         <form onSubmit={(e) => this.props.handleRegisterSubmit(e, this.state)}>
+          <h1>Create an account</h1>
           <input
             type='text'
             name='username'

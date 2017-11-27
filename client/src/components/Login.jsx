@@ -28,6 +28,7 @@ class Login extends Component {
     return (
       <div className='form-container'>
         <form onSubmit={(e) => this.props.handleLoginSubmit(e, this.state)}>
+          <h1>Login to your account</h1>
           <input
             className='text-input'
             type='text'
