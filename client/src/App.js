@@ -128,7 +128,6 @@ class App extends Component {
       if (lift.type === type) {
         data.push(lift)
       }
-      return null;
     })
     this.setState({
       filteredData1: data
@@ -141,7 +140,6 @@ class App extends Component {
       if (lift.bodypart === bodyType) {
         data.push(lift)
       }
-      return null;
     })
     this.setState({
       filteredData2: data
@@ -157,12 +155,6 @@ class App extends Component {
       instructionsClicked: true
     })
   }
-  // changeInsClicked () {
-  //   // console.log(this.props.exercise.link);
-  //   this.setState({
-  //     instructionsClicked: true
-  //   })
-  // }
 
   render () {
     return (
@@ -203,8 +195,10 @@ class App extends Component {
                   user={this.state.user} />
                     } />
               <Route exact path='/instructions/:exerciseId' render={(props) =>
-                <Instructions auth={this.state.auth} apiData={this.state.filteredData2} selectedExercise={this.state.selectedExercise} />
-              } />
+                <Instructions auth={this.state.auth}
+                  apiData={this.state.filteredData2}
+                  selectedExercise={this.state.selectedExercise} />
+                    } />
             </div>
            ) : (
              <p>Loading...</p>

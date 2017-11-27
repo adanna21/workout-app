@@ -11,18 +11,18 @@ function Header (props) {
       {props.auth ? (
         <nav>
           <ul>
-            <li><Link to='/' style={{textDecoration: 'none'}} >Home</Link></li>
-            <li><Link to='/profile' style={{textDecoration: 'none'}}>Profile</Link></li>
+            <li><Link to='/'>Home</Link></li>
+            <li><Link to='/profile'>Profile</Link></li>
             {/* <li><Link to='/routine' style={{textDecoration: 'none'}}>Add Routine</Link></li> */}
-            <li><Link to='/login' style={{textDecoration: 'none'}} onClick={() => props.logout()}>Logout</Link></li>
+            <li><Link to='/login' className='header-links' onClick={() => props.logout()}>Logout</Link></li>
           </ul>
         </nav>
       ) : (
         <nav>
           <ul>
-            <li><Link to='/' style={{textDecoration: 'none'}}>Home</Link></li>
-            <li><Link to='/login' style={{textDecoration: 'none'}}>Login</Link></li>
-            <li><Link to='/register' style={{textDecoration: 'none'}}>Register</Link></li>
+            <li><Link to='/'>Home</Link></li>
+            <li><Link to='/login'>Login</Link></li>
+            <li><Link to='/register'>Register</Link></li>
           </ul>
         </nav>
       )}
