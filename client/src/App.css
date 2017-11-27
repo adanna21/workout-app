@@ -152,8 +152,12 @@ ul:hover{
 
 li{
   margin:10px;
-}
 
+}
+nav a {
+  color: #2d2d2d;
+  text-decoration: none;
+}
 /*===================Categories=====================*/
 
 .button-list{
