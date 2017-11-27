@@ -36,11 +36,12 @@ Routine.create = (routine) => {
   ]);
 }
 
-Routine.update = (id, name) => {
+Routine.update = (name, id) => {
   return db.one(`
     UPDATE routines SET
     name = $1
     WHERE id = $2
+    RETURNING *
   `, [name, id])
 }
 

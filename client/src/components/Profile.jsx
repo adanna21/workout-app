@@ -7,6 +7,7 @@ class Profile extends Component {
   constructor(props){
     super(props);
     this.state = {
+      which: null,
       apiDataLoaded: false,
       apiData: null,
     }
@@ -50,7 +51,7 @@ class Profile extends Component {
         {this.state.apiDataLoaded ? (
           <div>
             <h2>Welcome {this.props.user.username}</h2>
-            <RoutineList apiData={this.state.apiData} user_id = {this.props.user.id} handleDelete={this.handleDelete}/>
+            <RoutineList apiData={this.state.apiData} user_id = {this.props.user.id} handleDelete={this.handleDelete} getUserFavorites={this.getUserFavorites}/>
           </div>
         ) : (
           <p>Loading...</p>
