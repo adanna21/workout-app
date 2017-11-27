@@ -53,8 +53,11 @@ border-spacing: 0;
 body {
   margin: 0;
   padding: 0;
-  background-image: url('./images/homebg.jpg');
+  background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5) ), url('./images/alexander-redl-185764.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top;
 }
 
 /*=======================Home=========================*/
@@ -62,27 +65,17 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center;
-}
-
 
 .home{
-margin-top: 15%;
-}
-
-#name {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 100px;
-  font-weight: bold;
-  margin:15px;
-  text-shadow: 5px 3px 5px white;
-
+  margin-top: 15%;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
 }
 
 #title{
   margin:20px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 40px;
-
+  font-size: 5em;
+  font-weight: 700;
 }
 
 .button{
@@ -91,79 +84,62 @@ margin-top: 15%;
   flex-direction: row;
 }
 
-.button2{
-  height: 30px;
-  width:10vw;
-  margin: 10px;
-  vertical-align: middle;
-  background-color: none;
-  border:3px solid black;
+
+.button2, .button3{
+  font-size: 1.3em;
+  width:15vw;
+  margin: 20px;
   padding: 10px;
   color: black;
-  font-family: 'Montserrat', sans-serif;
   font-weight: bolder;
+  text-decoration: none;
+  background-color: #de2d57;
 }
 
-.button2:hover{
-  color: #07F3F7;
-  border:3px solid #07F3F7;
-
+.button2:hover, .button3:hover{
+  background-color: #981f3c;
 }
 
-.button3{
-  height: 30px;
-  width:10vw;
-  margin: 10px;
-  vertical-align: middle;
-  background-color: none;
-  border:3px solid black;
-  padding: 10px;
-  color: black;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: bolder;
-}
-
-.button3:hover{
-  color: #07F3F7;
-  border:3px solid #07F3F7;
-
-}
-
-img{
-position:absolute;
-background-image: url('./images/homebg.jpg');
-background-size: cover;
-left:0;
-width: 100%;
-height:900px;
-z-index: -33;
-}
 /*=======================Header=========================*/
-header{
+nav{
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+#name {
+  /*font-family: 'Open Sans', sans-serif;*/
+  font-size: 5em;
+  font-weight: bold;
+  margin:15px;
+  text-shadow: 0px  2px 5px white;
 }
 
 ul {
   order:1;
   display:inline-flex;
   justify-content: center;
-  font-size: 25px;
-  font-family: 'Montserrat', sans-serif;
-
-}
-ul:hover{
-
+  font-size: 1.2em;
+  /*font-family: 'Open Sans', sans-serif;*/
+  margin:15px;
+  font-weight: bold;
 }
 
 li{
   margin:10px;
-
+  color: white;
+  font-family: 'Poppins', sans-serif;
 }
+
 nav a {
-  color: #2d2d2d;
+  color: #fff;
   text-decoration: none;
+}
+
+nav a:hover {
+  color: #07F3F7;
 }
 /*===================Categories=====================*/
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function Categories(props){
   return(
-    <div className="button-list">
+    <div className="button-list" style={{backgroundColor: 'gray'}}>
       <div className="chest-button" onClick={() => props.getBodyType("chest")}>
         <Link to="/routine"><h1 id="text">Chest</h1></Link>
       </div>
