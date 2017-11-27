@@ -11,9 +11,9 @@ function Header (props) {
       {props.auth ? (
         <nav>
           <ul>
-            <li><Link to='/'style={{textDecoration: 'none'}} >Home</Link></li>
-            <li><Link to='/workouts' style={{textDecoration: 'none'}}>Workouts</Link></li>
-            <li><Link to='/routine' style={{textDecoration: 'none'}}>Add Routine</Link></li>
+            <li><Link to='/' style={{textDecoration: 'none'}} >Home</Link></li>
+            <li><Link to='/profile' style={{textDecoration: 'none'}}>Profile</Link></li>
+            {/* <li><Link to='/routine' style={{textDecoration: 'none'}}>Add Routine</Link></li> */}
             <li><Link to='/login' style={{textDecoration: 'none'}} onClick={() => props.logout()}>Logout</Link></li>
           </ul>
         </nav>
