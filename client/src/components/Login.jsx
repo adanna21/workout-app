@@ -8,7 +8,7 @@ class Login extends Component {
     super(props)
     this.state = {
       username: '',
-      password: '',
+      password: ''
     }
     // a bind
     this.handleInputChange = this.handleInputChange.bind(this)
@@ -19,7 +19,7 @@ class Login extends Component {
     const name = e.target.name
     const value = e.target.value
     this.setState({
-      [name]: value,
+      [name]: value
     })
   }
 
