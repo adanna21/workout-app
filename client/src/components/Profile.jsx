@@ -11,6 +11,7 @@ class Profile extends Component {
       apiData: null,
     }
     this.getUserFavorites = this.getUserFavorites.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount(){
@@ -29,13 +30,27 @@ class Profile extends Component {
     }).catch(err => console.log(err))
   }
 
+  handleDelete(id){
+    fetch(`/api/routine/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .catch(err => console.log(err))
+    this.getUserFavorites();
+    this.getUserFavorites();
+    this.getUserFavorites();
+    this.getUserFavorites();
+  }
+
   render(){
     return (
       <div className='profile'>
         {this.state.apiDataLoaded ? (
           <div>
             <h2>Welcome {this.props.user.username}</h2>
-            <RoutineList apiData={this.state.apiData} user_id = {this.props.user.id} />
+            <RoutineList apiData={this.state.apiData} user_id = {this.props.user.id} handleDelete={this.handleDelete}/>
           </div>
         ) : (
           <p>Loading...</p>

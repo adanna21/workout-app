@@ -9,7 +9,6 @@ class RoutineList extends Component {
       liftDataLoaded: false,
     }
     this.updateName = this.updateName.bind(this);
-    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount(){
@@ -37,16 +36,6 @@ class RoutineList extends Component {
     .catch(err => console.log(err))
   }
 
-  handleDelete(id){
-    fetch(`/api/routine/${id}`, {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-    .catch(err => console.log(err))
-  }
-
   render(){
     return(
       <div className="routine-list">
@@ -62,6 +51,7 @@ class RoutineList extends Component {
                     <p>{this.state.liftData[routine.exercises2 + 1].name}</p>
                     <p>{this.state.liftData[routine.exercises3 + 1].name}</p>
                     <p>{this.state.liftData[routine.exercises4 + 1].name}</p>
+                    <button onClick={() => this.props.handleDelete(routine.id)}>DELETE</button>
                   </div>
                 )
               }
