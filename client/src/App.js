@@ -26,7 +26,8 @@ class App extends Component {
       filteredData1: null,
       filteredData2: null,
       selectedExercise: {},
-      instructionsClicked: false
+      instructionsClicked: false,
+      savedList: null,
     }
     this.handleLoginSubmit = this.handleLoginSubmit.bind(this)
     this.handleRegisterSubmit = this.handleRegisterSubmit.bind(this)
@@ -36,6 +37,7 @@ class App extends Component {
     this.reset = this.reset.bind(this)
     this.getApiData = this.getApiData.bind(this)
     this.selectExerciseById = this.selectExerciseById.bind(this)
+    this.saveList = this.saveList.bind(this)
   }
 
   reset () {
@@ -156,6 +158,12 @@ class App extends Component {
     })
   }
 
+  saveList (array) {
+    this.setState({
+      savedList: array,
+    })
+  }
+
   render () {
     return (
       <Router>
@@ -167,7 +175,8 @@ class App extends Component {
           {this.state.apiDataLoaded ? (
             <div>
               <Route exact path='/' render={(props) =>
-                <Home getExerciseType={this.getExerciseType} />
+                <Home getExerciseType={this.getExerciseType}
+                saveList={this.saveList}/>
                     } />
               <Route exact path='/login' render={() => (
                   this.state.auth
@@ -195,7 +204,9 @@ class App extends Component {
                     apiData={this.state.filteredData2}
                     auth={this.state.auth}
                     selectExerciseById={this.selectExerciseById}
-                    user={this.state.user} />
+                    user={this.state.user}
+                    saveList={this.saveList}
+                    savedList={this.state.savedList} />
                   : <Redirect to='/' />
                 )} />
               <Route exact path='/instructions/:exerciseId' render={(props) => (

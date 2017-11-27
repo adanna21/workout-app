@@ -3,8 +3,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 function Header (props) {
-  console.log('+++ header +++')
-  console.log(props)
   return (
     <header>
       <div className='logo' />
