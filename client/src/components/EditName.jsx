@@ -8,3 +8,5 @@ function EditName(props){
     </form>
   )
 }
+
+export default EditName
