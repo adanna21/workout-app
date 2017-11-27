@@ -31,10 +31,17 @@ class ExerciseList extends Component {
 
     }
 
-    this.setState({
-      list: array.slice(0,4)
-    })
-
+    if(this.props.savedList){
+      this.setState({
+        list: this.props.savedList
+      })
+    } else {
+      let temp = array.slice(0,4)
+      this.setState({
+        list: temp
+      })
+      this.props.saveList(temp)
+    }
   }
 
   saveRoutine(){
@@ -70,8 +77,7 @@ class ExerciseList extends Component {
           <button onClick={() => this.saveRoutine()}>Save</button>
         ) : (
           <p>Please log in to save.</p>
-        )
-        }
+        )}
       </div>
     )
   }
