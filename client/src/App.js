@@ -187,13 +187,15 @@ class App extends Component {
               <Route exact path='/categories' render={(props) =>
                 <Categories getBodyType={this.getBodyType} />
                     } />
-              <Route exact path='/routine' render={(props) =>
-                <ExerciseList
-                  apiData={this.state.filteredData2}
-                  auth={this.state.auth}
-                  selectExerciseById={this.selectExerciseById}
-                  user={this.state.user} />
-                    } />
+              <Route exact path='/routine' render={(props) => (
+                !this.state.apiData === null
+                  ? <ExerciseList
+                    apiData={this.state.filteredData2}
+                    auth={this.state.auth}
+                    selectExerciseById={this.selectExerciseById}
+                    user={this.state.user} />
+                  : <Redirect to='/' />
+                )} />
               <Route exact path='/instructions/:exerciseId' render={(props) =>
                 <Instructions auth={this.state.auth}
                   apiData={this.state.filteredData2}
