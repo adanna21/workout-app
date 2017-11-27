@@ -184,21 +184,27 @@ class App extends Component {
                   ? <Redirect to='/profile' />
                   : <Register handleRegisterSubmit={this.handleRegisterSubmit} />
                 )} />
-              <Route exact path='/categories' render={(props) =>
-                <Categories getBodyType={this.getBodyType} />
-                    } />
-              <Route exact path='/routine' render={(props) =>
-                <ExerciseList
-                  apiData={this.state.filteredData2}
-                  auth={this.state.auth}
-                  selectExerciseById={this.selectExerciseById}
-                  user={this.state.user} />
-                    } />
-              <Route exact path='/instructions/:exerciseId' render={(props) =>
-                <Instructions auth={this.state.auth}
-                  apiData={this.state.filteredData2}
-                  selectedExercise={this.state.selectedExercise} />
-                    } />
+              <Route exact path='/categories' render={(props) => (
+                !this.state.apiData === null
+                  ? <Categories getBodyType={this.getBodyType} />
+                  : <Redirect to='/' />
+              )} />
+              <Route exact path='/routine' render={(props) => (
+                !this.state.apiData === null
+                  ? <ExerciseList
+                    apiData={this.state.filteredData2}
+                    auth={this.state.auth}
+                    selectExerciseById={this.selectExerciseById}
+                    user={this.state.user} />
+                  : <Redirect to='/' />
+                )} />
+              <Route exact path='/instructions/:exerciseId' render={(props) => (
+                !this.state.apiData === null
+                  ? <Instructions auth={this.state.auth}
+                    apiData={this.state.filteredData2}
+                    selectedExercise={this.state.selectedExercise} />
+                  : <Redirect to='/' />
+                )} />
             </div>
            ) : (
              <p>Loading...</p>
