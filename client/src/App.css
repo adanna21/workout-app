@@ -290,9 +290,13 @@ button{
   /*background-color: #de2d57;*/
 
 }
-a{
+a {
   text-decoration: none;
-  color:black;
+  color: black;
+}
+
+.routine-back {
+  color: white;
 }
 
 .save-exercise-btn{

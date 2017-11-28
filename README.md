@@ -124,3 +124,7 @@ _TBD_
 ### LINKS
 
 [PROJECT BOARD](https://github.com/adanna21/workout-app/projects/1)
+
+### TROUBLES
+
+
