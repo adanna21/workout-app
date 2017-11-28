@@ -11,7 +11,6 @@ function Header (props) {
           <ul>
             <li><Link to='/'>HOME</Link></li>
             <li><Link to='/profile'>PROFILE</Link></li>
-            {/* <li><Link to='/routine' style={{textDecoration: 'none'}}>Add Routine</Link></li> */}
             <li><Link to='/login' className='header-links' onClick={() => props.logout()}>LOGOUT</Link></li>
           </ul>
         </nav>

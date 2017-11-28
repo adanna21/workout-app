@@ -11,6 +11,7 @@ class Home extends Component {
 
   componentDidMount () {
     this.props.saveList(null)
+    this.props.getExerciseType(null)
   }
 
   render () {
