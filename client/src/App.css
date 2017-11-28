@@ -394,6 +394,10 @@ form h2 {
   font-family: 'Poppins', sans-serif;
 }
 
+.submit-btn:hover {
+  background-color: #981f3c;
+}
+
 form a {
   text-shadow: none;
 }
