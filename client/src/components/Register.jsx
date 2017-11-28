@@ -29,7 +29,7 @@ class Register extends Component {
       <div className='form-container'>
         <form onSubmit={(e) => this.props.handleRegisterSubmit(e, this.state)}>
           <h1>CREATE AN ACCOUNT</h1>
-          <input
+          <input className="register-input"
             type='text'
             name='username'
             value={this.state.username}
@@ -37,7 +37,7 @@ class Register extends Component {
             onChange={this.handleInputChange}
             required
           />
-          <input
+        <input  className="register-input"
             type='password'
             name='password'
             value={this.state.password}
@@ -45,7 +45,7 @@ class Register extends Component {
             onChange={this.handleInputChange}
             required
           />
-          <input
+        <input  className="register-input"
             type='email'
             name='email'
             value={this.state.email}
@@ -53,7 +53,7 @@ class Register extends Component {
             onChange={this.handleInputChange}
             required
           />
-          <input
+        <input className="register-input"
             type='submit'
             value='Register'
             className='submit-btn'
