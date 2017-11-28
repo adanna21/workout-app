@@ -419,25 +419,41 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  font-size: 60px;
+  align-items: center;
+  font-size: 3.5em;
   font-family: 'Poppins', sans-serif;
+  font-weight: bold;
   align-items: center;
   color: white;
 }
-.instructions .link-wrapper {
-  margin-top: 60vh;
-  font-size: 50px;
+
+.link-wrapper {
+  margin-top: 63vh;
 }
+
 iframe{
-  border: 20px solid black;
-  justify-content: center;
+  /*border: 5px solid black;*/
+  box-shadow: black 0px 0px 2px;
+  border-radius: 6px;
 }
+
+.instructions-btn {
+  text-decoration: none;
+  background-color: #de2d57;
+  font-weight: lighter;
+  border-radius: 6px;
+  font-size: .5em;
+  padding: 2px 10px 2px 10px;
+}
+
+.instructions-btn:hover {
+  background-color: #981f3c;
+}
+
 /*===================profile=================*/
 
 .welcome{
   font-size: 30px;
-
-
 }
 
 #welcome-name{
