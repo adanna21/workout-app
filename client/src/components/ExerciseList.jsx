@@ -1,26 +1,42 @@
 import React, { Component } from 'react'
-// import { withRouter } from 'react-router-dom'
 import Exercise from './Exercise'
 
 class ExerciseList extends Component {
 
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       list: null
     }
   }
 
-  componentDidMount () {
+  componentDidMount() {
+
+    // Courtesy of stackoverflow.
+    // This snippet shuffles the elements in an array.
+
+    // Sets up a dummy array to hold the data.
     let array = this.props.apiData
+
+    // Variable declaration all-in-one.
     let currentIndex = array.length, temporaryValue, randomIndex
+
+    // We take out all the elements in the dummy array until it's empty.
     while (currentIndex !== 0) {
+
+      // randomIndex is a random index in this new array.
       randomIndex = Math.floor(Math.random() * currentIndex)
+
+      // Because arrays start at 0.
       currentIndex -= 1
+
+
       temporaryValue = array[currentIndex]
       array[currentIndex] = array[randomIndex]
       array[randomIndex] = temporaryValue
     }
+
+
 
     if (this.props.savedList) {
       this.setState({
@@ -34,24 +50,6 @@ class ExerciseList extends Component {
         this.props.saveList(temp)
       }
     }
-
-    // if (this.props.filteredData1 && this.props.filteredData2){
-    //   if (this.props.savedList) {
-    //     this.setState({
-    //       list: this.props.savedList
-    //     })
-    //   } else {
-    //     let temp = array.slice(0, 4)
-    //     this.setState({
-    //       list: temp
-    //     })
-    //     this.props.saveList(temp)
-    //   }
-    // } else if (!this.props.filteredData2){
-    //   this.setState({
-    //     list: null
-    //   })
-    // }
 
   saveRoutine () {
     fetch('/api/routine/', {

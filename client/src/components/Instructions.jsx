@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import Iframe from 'react-iframe'
 import { Link } from 'react-router-dom'
 
-// import { withRouter } from 'react-router-dom'
 
 class Instructions extends Component {
 
