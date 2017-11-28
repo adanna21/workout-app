@@ -39,8 +39,8 @@ app.listen(PORT, () => {
 
 // add routes
 app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 // comment these out for now
 const routineRouter = require('./routes/routine-routes')
