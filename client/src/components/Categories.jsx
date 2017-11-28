@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 // Each link leads to the same page (/routine); however, they all pass different data.
 
 class Categories extends Component {
-
   constructor(props){
     super(props)
   }
@@ -16,42 +15,43 @@ class Categories extends Component {
   }
 
   render(){
-    return(
-      <div
-        className="button-list"
-        style={{backgroundColor: '#8080868c'}} >
-        <div
-          className="chest-button"
-          onClick={() => this.props.getBodyType("chest")} >
-          <Link to="/routine">
-            <h1 id="text">Chest</h1>
-          </Link>
-        </div>
-        <div
-          className="legs-button"
-          onClick={() => this.props.getBodyType("legs")} >
-          <Link to="/routine">
-            <h1 id="text">Legs</h1>
-          </Link>
-        </div>
-        <div
-          className="back-button"
-          onClick={() => this.props.getBodyType("back")} >
-          <Link to="/routine">
-            <h1 id="text">Back</h1>
-          </Link>
-        </div>
-        <div
-          className="delts-button"
-          onClick={() => this.props.getBodyType("delts")} >
-          <Link to="/routine">
-            <h1 id="text">Delts</h1>
-          </Link>
-        </div>
+    return (
+      <div className='button-list' style={{backgroundColor: '#8080868c'}}>
+        {props.clickedCategory === 'weight' ? (
+          <div className='category-wrapper'>
+            <div id='w-chest' onClick={() => props.getBodyType('chest')}>
+              <Link to='/routine'><h1 className='category-text'>Chest</h1></Link>
+            </div>
+            <div id='w-legs' onClick={() => props.getBodyType('legs')}>
+              <Link to='/routine'><h1 className='category-text'>Legs</h1></Link>
+            </div>
+            <div id='w-back' onClick={() => props.getBodyType('back')}>
+              <Link to='/routine'><h1 className='category-text'>Back</h1></Link>
+            </div>
+            <div id='w-delts' onClick={() => props.getBodyType('delts')}>
+              <Link to='/routine'><h1 className='category-text'>Delts</h1></Link>
+            </div>
+          </div>
+        ) : (
+          <div className='category-wrapper'>
+            <div id='cal-chest' onClick={() => props.getBodyType('chest')}>
+              <Link to='/routine'><h1 className='category-text'>Chest</h1></Link>
+            </div>
+            <div id='cal-legs' onClick={() => props.getBodyType('legs')}>
+              <Link to='/routine'><h1 className='category-text'>Legs</h1></Link>
+            </div>
+            <div id='cal-back' onClick={() => props.getBodyType('back')}>
+              <Link to='/routine'><h1 className='category-text'>Back</h1></Link>
+            </div>
+            <div id='cal-delts' onClick={() => props.getBodyType('delts')}>
+              <Link to='/routine'><h1 className='category-text'>Delts</h1></Link>
+            </div>
+          </div>
+        )}
       </div>
     )
   }
-
+  
 }
 
 export default Categories

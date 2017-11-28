@@ -24,6 +24,7 @@ class App extends Component {
       apiDataLoaded: false,
       filteredData1: null,
       filteredData2: null,
+      clickedCategory: '',
       selectedExercise: {},
       savedList: null,
       source: null,
@@ -140,6 +141,15 @@ class App extends Component {
     this.setState({
       filteredData1: data
     })
+    if (type === 'weight') {
+      this.setState({
+        clickedCategory: 'weight'
+      })
+    } else if (type === 'calisthenics') {
+      this.setState({
+        clickedCategory: 'calisthenics'
+      })
+    }
   }
 
   getBodyType (bodyType) {
@@ -183,7 +193,7 @@ class App extends Component {
             <div>
               <Route exact path='/' render={(props) =>
                 <Home getExerciseType={this.getExerciseType}
-                saveList={this.saveList}/>
+                saveList={this.saveList} />
                     } />
               <Route exact path='/login' render={() => (
                   this.state.auth
@@ -203,7 +213,8 @@ class App extends Component {
                 )} />
               <Route exact path='/categories' render={(props) => (
                 this.state.filteredData1
-                  ? <Categories
+                  ? <Categories 
+                    clickedCategory={this.state.clickedCategory}
                     getBodyType={this.getBodyType}
                     saveList={this.saveList}
                     />

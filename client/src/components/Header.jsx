@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 function Header (props) {
   return (
@@ -9,18 +9,25 @@ function Header (props) {
         <nav>
           <div className="name"></div>
           <ul>
-            <li><Link to='/'>HOME</Link></li>
-            <li><Link to='/profile'>PROFILE</Link></li>
-            <li><Link to='/login' className='header-links' onClick={() => props.logout()}>LOGOUT</Link></li>
+            <li>
+              <NavLink exact to='/' >HOME</NavLink>
+            </li>
+            <li><NavLink exact to='/profile' >PROFILE</NavLink></li>
+            {/* <li><NavLink to='/routine' style={{textDecoration: 'none'}}>Add Routine</NavLink></li> */}
+            <li><NavLink exact to='/login' onClick={() => props.logout()}>LOGOUT</NavLink></li>
           </ul>
         </nav>
       ) : (
         <nav>
           <div className="name"></div>
           <ul>
-            <li><Link to='/'>HOME</Link></li>
-            <li><Link to='/login'>LOGIN</Link></li>
-            <li><Link to='/register'>REGISTER</Link></li>
+            <li>
+              <NavLink exact to='/' activeClassName='active'>
+                HOME
+              </NavLink>
+            </li>
+            <li><NavLink exact to='/login'>LOGIN</NavLink></li>
+            <li><NavLink exact to='/register'>REGISTER</NavLink></li>
           </ul>
         </nav>
       )}
