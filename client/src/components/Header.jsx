@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom'
 function Header (props) {
   return (
     <header>
-      <div className='logo' />
+      <div className='logo'/>
       {props.auth ? (
         <nav>
-          <h1 id="name">iLIFT</h1>
+          <div className="name"></div>
           <ul>
             <li><Link to='/'>HOME</Link></li>
             <li><Link to='/profile'>PROFILE</Link></li>
@@ -17,7 +17,7 @@ function Header (props) {
         </nav>
       ) : (
         <nav>
-          <h1 id="name">iLIFT</h1>
+          <div className="name"></div>
           <ul>
             <li><Link to='/'>HOME</Link></li>
             <li><Link to='/login'>LOGIN</Link></li>

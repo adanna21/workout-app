@@ -61,7 +61,7 @@ class RoutineList extends Component {
     return(
       <div className="routine-list">
         {this.state.liftDataLoaded ? (
-          <ul>
+          <ul className='routine-ul'>
             {this.props.apiData.data.routines.map(routine => {
               console.log(routine)
               if (routine.user_id === this.props.user_id){

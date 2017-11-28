@@ -57,6 +57,7 @@ html {
 body {
   width: 100vw;
   height: 100%;
+
   position: fixed;
   background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5) ), url('./images/alexander-redl-185764.jpg');
   background-size: cover;
@@ -70,6 +71,10 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center;
+}
+
+.logo{
+
 }
 
 .home{
@@ -114,6 +119,17 @@ nav{
   justify-content: space-between;
   align-items: center;
   font-family: 'Poppins', sans-serif;
+}
+
+.name{
+  /*background-color: #de2d57;*/
+  margin: 20px;
+  background: url('./images/ifit.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height:100px;
+  width: 200px;
+  /*z-index: 3;*/
 }
 
 #name {
@@ -218,6 +234,11 @@ ul {
 
 }
 
+.routine-ul{
+  height: 600px;
+  overflow-y: scroll;
+}
+
 .routines{
     margin: 5px;
     width: 400px;
@@ -229,6 +250,12 @@ ul {
 
 }
 
+.routine-container{
+
+}
+.routine-list {
+}
+
 button{
   display: flex;
   justify-content: center;
@@ -237,6 +264,7 @@ button{
   border:0;
   font-size: 18px;
   width:100%;
+  /*background-color: #de2d57;*/
 
 }
 a{
@@ -280,10 +308,8 @@ a{
 
 /*====================instructions===================*/
 .instructions{
-
   display:flex;
   justify-content: center;
-
 }
 iframe{
   border: 20px solid black;
