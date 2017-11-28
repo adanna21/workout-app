@@ -12,17 +12,11 @@ class ExerciseList extends Component {
   }
 
   componentDidMount () {
-    // stack overflow's shuffle an array
     let array = this.props.apiData
     let currentIndex = array.length, temporaryValue, randomIndex
-
-    // While there remain elements to shuffle...
     while (currentIndex !== 0) {
-      // Pick a remaining element...
       randomIndex = Math.floor(Math.random() * currentIndex)
       currentIndex -= 1
-
-      // And swap it with the current element.
       temporaryValue = array[currentIndex]
       array[currentIndex] = array[randomIndex]
       array[randomIndex] = temporaryValue
@@ -32,14 +26,32 @@ class ExerciseList extends Component {
       this.setState({
         list: this.props.savedList
       })
-    } else {
-      let temp = array.slice(0, 4)
-      this.setState({
-        list: temp
-      })
-      this.props.saveList(temp)
+      } else {
+        let temp = array.slice(0, 4)
+        this.setState({
+          list: temp
+        })
+        this.props.saveList(temp)
+      }
     }
-  }
+
+    // if (this.props.filteredData1 && this.props.filteredData2){
+    //   if (this.props.savedList) {
+    //     this.setState({
+    //       list: this.props.savedList
+    //     })
+    //   } else {
+    //     let temp = array.slice(0, 4)
+    //     this.setState({
+    //       list: temp
+    //     })
+    //     this.props.saveList(temp)
+    //   }
+    // } else if (!this.props.filteredData2){
+    //   this.setState({
+    //     list: null
+    //   })
+    // }
 
   saveRoutine () {
     fetch('/api/routine/', {
@@ -65,20 +77,31 @@ class ExerciseList extends Component {
       <div className='exercise-list'>
         {this.state.list ? (
           this.state.list.map(exercise => {
-            return <Exercise key={exercise.id} exercise={exercise} selectExerciseById={this.props.selectExerciseById} setSource={this.props.setSource} />
+            return(
+              <Exercise
+                key={exercise.id}
+                exercise={exercise}
+                selectExerciseById={this.props.selectExerciseById}
+                setSource={this.props.setSource}
+              />
+            )
           })
         ) : (
           <p>Loading...</p>
         )}
-        {this.props.auth ? (
-          <button className='save-exercise-btn' onClick={() => this.saveRoutine()}>Save This Routine</button>
+        {(this.props.filteredData2.length === 0) ? (
+          <p>Error with category selection. Please return to Home and try again.</p>
         ) : (
-          <p className='save-exercise-p'>Please login to save</p>
+          this.props.auth ? (
+            <button className='save-exercise-btn' onClick={() => this.saveRoutine()}>Save This Routine</button>
+          ) : (
+            <p className='save-exercise-p'>Please login to save</p>
+          )
         )}
+
       </div>
     )
   }
 }
 
-// export default withRouter(ExerciseList)
 export default ExerciseList

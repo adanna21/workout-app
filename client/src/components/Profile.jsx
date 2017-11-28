@@ -56,7 +56,7 @@ class Profile extends Component {
     return (
       <div className='profile'>
         {this.state.apiDataLoaded ? (
-          <div>
+          <div className='routine-container'>
             <h2 id="welcome-name">Welcome {this.props.user.username}</h2>
             <RoutineList apiData={this.state.apiData} user_id = {this.props.user.id} handleDelete={this.handleDelete} getUserFavorites={this.getUserFavorites} selectExerciseById={this.props.selectExerciseById} setSource={this.props.setSource} which={this.state.which} setWhich={this.setWhich}/>
           </div>

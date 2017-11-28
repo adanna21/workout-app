@@ -13,7 +13,7 @@
 
 1. Create an API using `Express.js` that possesses full CRUD functionalities.
 - POST creates new routines and new users.
-- GET retrieves exercises for a routine, and user data.
+- GET retrieves exercises for a routine, and user-saved routines.
 - PUT updates the names of existing routines the user saved.
 - DELETE removes existing routines.
 2. Create a `React.js` application that presents the API's data in a user-friendly way.
@@ -71,21 +71,21 @@ The app features log-in functionality as a way to save routines; however, loggin
 
 **Users**
 
-|id|name|password_digest|
-|:-:|:-:|:-:|
-|Primary||hash|
+|id|name|password_digest|email|
+|:-:|:-:|:-:|:-:|
+|Primary||hash||
 
 **Exercises**
 
-|id|name|category|url|reps|sets|
-|:-:|:-:|:-:|:-:|:-:|:-:|
-|Primary||||||
+|id|name|bodytype|type|link|reps|sets|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|Primary|||||||
 
 **Routines**
 
-|id|name|category|user|exercises|
-|:-:|:-:|:-:|:-:|:-:|
-|Primary|||Users(id)| JOIN with Exercises(id) |
+|id|name|bodypart|type|user|exercises1|exercises2|exercises3|exercises4|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|Primary||||Users(id)| Exercises(id) | Exercises(id) | Exercises(id) | Exercises(id) |
 
 ### USER STORIES
 

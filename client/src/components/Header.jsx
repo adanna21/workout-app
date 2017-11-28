@@ -4,10 +4,10 @@ import { NavLink } from 'react-router-dom'
 function Header (props) {
   return (
     <header>
-      <div className='logo' />
+      <div className='logo'/>
       {props.auth ? (
         <nav>
-          <h1 id="name">iLIFT</h1>
+          <div className="name"></div>
           <ul>
             <li>
               <NavLink exact to='/' >HOME</NavLink>
@@ -19,7 +19,7 @@ function Header (props) {
         </nav>
       ) : (
         <nav>
-          <h1 id="name">iLIFT</h1>
+          <div className="name"></div>
           <ul>
             <li>
               <NavLink exact to='/' activeClassName='active'>
