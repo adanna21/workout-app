@@ -19,32 +19,64 @@ class Categories extends Component {
       <div className='button-list' style={{backgroundColor: '#8080868c'}}>
         {this.props.clickedCategory === 'weight' ? (
           <div className='category-wrapper'>
-            <div id='w-chest' onClick={() => this.props.getBodyType('chest')}>
-              <Link to='/routine'><h1 className='category-text'>Chest</h1></Link>
+            <div className='category-container'>
+              <Link to='/routine'>
+              <h1 className='category-text'>Chest</h1>
+              <div id='w-chest' className='category-transform' onClick={() => this.props.getBodyType('chest')}>
+              </div>
+              </Link>
             </div>
-            <div id='w-legs' onClick={() => this.props.getBodyType('legs')}>
-              <Link to='/routine'><h1 className='category-text'>Legs</h1></Link>
+            <div className='category-container'>
+              <Link to='/routine'>
+              <h1 className='category-text'>Legs</h1>
+              <div id='w-legs' className='category-transform' onClick={() => this.props.getBodyType('legs')}>
+              </div>
+              </Link>
             </div>
-            <div id='w-back' onClick={() => this.props.getBodyType('back')}>
-              <Link to='/routine'><h1 className='category-text'>Back</h1></Link>
+            <div className='category-container'>
+              <Link to='/routine'>
+              <h1 className='category-text'>Back</h1>
+              <div id='w-back' className='category-transform' onClick={() => this.props.getBodyType('back')}>
+              </div>
+              </Link>
             </div>
-            <div id='w-delts' onClick={() => this.props.getBodyType('delts')}>
-              <Link to='/routine'><h1 className='category-text'>Delts</h1></Link>
+            <div className='category-container'>
+              <Link to='/routine'>
+              <h1 className='category-text'>Delts</h1>
+              <div id='w-delts' className='category-transform' onClick={() => this.props.getBodyType('delts')}>
+              </div>
+              </Link>
             </div>
           </div>
         ) : (
           <div className='category-wrapper'>
-            <div id='cal-chest' onClick={() => this.props.getBodyType('chest')}>
-              <Link to='/routine'><h1 className='category-text'>Chest</h1></Link>
+            <div className='category-container'>
+              <Link to='/routine'>
+              <h1 className='category-text'>Chest</h1>
+              <div id='cal-chest' className='category-transform' onClick={() => this.props.getBodyType('chest')}>
+              </div>
+              </Link>
             </div>
-            <div id='cal-legs' onClick={() => this.props.getBodyType('legs')}>
-              <Link to='/routine'><h1 className='category-text'>Legs</h1></Link>
+            <div className='category-container'>
+              <Link to='/routine'>
+              <h1 className='category-text'>Legs</h1>
+              <div id='cal-legs' className='category-transform' onClick={() => this.props.getBodyType('legs')}>
+              </div>
+              </Link>
             </div>
-            <div id='cal-back' onClick={() => this.props.getBodyType('back')}>
-              <Link to='/routine'><h1 className='category-text'>Back</h1></Link>
+            <div className='category-container'>
+              <Link to='/routine'>
+              <h1 className='category-text'>Back</h1>
+              <div id='cal-back' className='category-transform' onClick={() => this.props.getBodyType('back')}>
+              </div>
+              </Link>
             </div>
-            <div id='cal-delts' onClick={() => this.props.getBodyType('delts')}>
-              <Link to='/routine'><h1 className='category-text'>Delts</h1></Link>
+            <div className='category-container'>
+              <Link to='/routine'>
+              <h1 className='category-text'>Delts</h1>
+              <div id='cal-delts' className='category-transform' onClick={() => this.props.getBodyType('delts')}>
+              </div>
+              </Link>
             </div>
           </div>
         )}
