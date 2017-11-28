@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 // Each link leads to the same page (/routine); however, they all pass different data.
 
 class Categories extends Component {
+
   constructor(props){
     super(props)
   }
@@ -13,6 +14,9 @@ class Categories extends Component {
     this.props.getBodyType(null)
     this.props.saveList(null)
   }
+
+  // Conditional rendering for pictures.
+  // Weights and calisthetics show different pictures.
 
   render(){
     return (

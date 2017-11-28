@@ -11,10 +11,12 @@ import Header from './components/Header'
 import Categories from './components/Categories'
 import Instructions from './components/Instructions'
 import ExerciseList from './components/ExerciseList'
+
+// To handle an error we had...
 const fetch = window.fetch
 
 class App extends Component {
-  // constructor & state
+
   constructor (props) {
     super(props)
     this.state = {
@@ -34,12 +36,13 @@ class App extends Component {
     this.logout = this.logout.bind(this)
     this.getBodyType = this.getBodyType.bind(this)
     this.getExerciseType = this.getExerciseType.bind(this)
-    this.reset = this.reset.bind(this)
     this.getApiData = this.getApiData.bind(this)
     this.selectExerciseById = this.selectExerciseById.bind(this)
     this.saveList = this.saveList.bind(this)
     this.setSource = this.setSource.bind(this)
   }
+
+  // For handling the instruction back button.
 
   setSource(location){
     this.setState({
@@ -47,16 +50,9 @@ class App extends Component {
     })
   }
 
-  reset() {
-    this.setState({
-      apiData: null,
-      apiDataLoaded: false,
-      filteredData1: null,
-      filteredData2: null
-    })
-  }
+  // Application will filter the results of this GET with your choices.
 
-  getApiData () {
+  getApiData() {
     fetch('/api/lift')
     .then(res => res.json())
     .then(res => {
@@ -66,6 +62,8 @@ class App extends Component {
       })
     }).catch(err => console.log(err))
   }
+
+  // Login stuff.
 
   componentDidMount() {
     fetch('/api/auth/verify', {
@@ -131,6 +129,8 @@ class App extends Component {
     }).catch(err => console.log(err))
   }
 
+  // To handle filtering out which exercises are of note.
+
   getExerciseType (type) {
     let data = []
     this.state.apiData.map(lift => {
@@ -164,6 +164,8 @@ class App extends Component {
     })
   }
 
+  // For instructions... I think?
+
   selectExerciseById (id) {
     const exercise = this.state.apiData.find(exercise => {
       if (exercise.id === id){
@@ -174,6 +176,8 @@ class App extends Component {
       selectedExercise: exercise
     })
   }
+
+  // To save a generated routine from loss when going to instruction page.
 
   saveList (array) {
     this.setState({
@@ -213,7 +217,7 @@ class App extends Component {
                 )} />
               <Route exact path='/categories' render={(props) => (
                 this.state.filteredData1
-                  ? <Categories 
+                  ? <Categories
                     clickedCategory={this.state.clickedCategory}
                     getBodyType={this.getBodyType}
                     saveList={this.saveList}
@@ -246,7 +250,6 @@ class App extends Component {
            ) : (
              <p>Loading...</p>
           )}
-
         </div>
       </Router>
     )

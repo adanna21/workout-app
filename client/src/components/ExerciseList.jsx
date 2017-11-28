@@ -1,59 +1,62 @@
 import React, { Component } from 'react'
-// import { withRouter } from 'react-router-dom'
 import Exercise from './Exercise'
 
 class ExerciseList extends Component {
 
-  constructor (props) {
+  constructor(props){
     super(props)
     this.state = {
       list: null
     }
   }
 
-  componentDidMount () {
+  componentDidMount(){
+
+    // Courtesy of stackoverflow.
+    // This snippet shuffles the elements in an array.
+
+    // Sets up a dummy array to hold the data.
     let array = this.props.apiData
+
+    // Variable declaration all-in-one.
     let currentIndex = array.length, temporaryValue, randomIndex
+
+    // We take out all the elements in the dummy array until it's empty.
     while (currentIndex !== 0) {
+
+      // randomIndex is a random index in this new array.
       randomIndex = Math.floor(Math.random() * currentIndex)
+
+      // Because arrays start at 0.
       currentIndex -= 1
+
+      // Handling the array and the new array value.
       temporaryValue = array[currentIndex]
       array[currentIndex] = array[randomIndex]
       array[randomIndex] = temporaryValue
     }
 
-    if (this.props.savedList) {
+    // This if statement is to manage savedList.
+    // Basically, if the user has populated a routine, that routine is saved.
+    // If there is no saved routine, then it will spawn a random routine list.
+
+    if(this.props.savedList){
       this.setState({
         list: this.props.savedList
       })
-      } else {
-        let temp = array.slice(0, 4)
-        this.setState({
-          list: temp
-        })
-        this.props.saveList(temp)
-      }
+    } else {
+      let temp = array.slice(0, 4)
+      this.setState({
+        list: temp
+      })
+      this.props.saveList(temp)
     }
 
-    // if (this.props.filteredData1 && this.props.filteredData2){
-    //   if (this.props.savedList) {
-    //     this.setState({
-    //       list: this.props.savedList
-    //     })
-    //   } else {
-    //     let temp = array.slice(0, 4)
-    //     this.setState({
-    //       list: temp
-    //     })
-    //     this.props.saveList(temp)
-    //   }
-    // } else if (!this.props.filteredData2){
-    //   this.setState({
-    //     list: null
-    //   })
-    // }
+  }
 
-  saveRoutine () {
+  // Save a routine. POST request.
+
+  saveRoutine(){
     fetch('/api/routine/', {
       method: 'POST',
       headers: {
@@ -72,7 +75,9 @@ class ExerciseList extends Component {
     }).catch(err => console.log(err))
   }
 
-  render () {
+  // Some conditional rendering for when you haven't properly selected your exercises.
+
+  render(){
     return (
       <div className='exercise-list'>
         {this.state.list ? (

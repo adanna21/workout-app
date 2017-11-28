@@ -117,14 +117,10 @@ The app features log-in functionality as a way to save routines; however, loggin
 3. The user selects the route they wish to do for the day. The randomly-generated routine list appears.
 4. The user can save the list with a button at the bottom.
 
-### STYLE GUIDE
-
-_TBD_
-
 ### LINKS
 
 [PROJECT BOARD](https://github.com/adanna21/workout-app/projects/1)
 
 ### TROUBLES
 
-
+- The small things. Font size, scaling, mobile deployment, etc.
