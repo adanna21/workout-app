@@ -57,6 +57,7 @@ html {
 body {
   width: 100vw;
   height: 100%;
+
   position: fixed;
   background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5) ), url('./images/alexander-redl-185764.jpg');
   background-size: cover;
@@ -70,6 +71,10 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center;
+}
+
+.logo{
+
 }
 
 .home{
@@ -114,6 +119,17 @@ nav{
   justify-content: space-between;
   align-items: center;
   font-family: 'Poppins', sans-serif;
+}
+
+.name{
+  /*background-color: #de2d57;*/
+  margin: 20px;
+  background: url('./images/ifit.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height:100px;
+  width: 200px;
+  /*z-index: 3;*/
 }
 
 #name {
@@ -218,16 +234,45 @@ ul {
 
 }
 
-.routines{
-  width: 200px;
-  margin: 20px;
-  padding: 10px;
-  border: 2px solid black;
-  background-color: yellow;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 30px;
+.routine-ul{
+  height: 600px;
+  overflow-y: scroll;
 }
 
+.routines{
+
+    margin: 5px;
+    width: 400px;
+    padding: 30px;
+    color:black;
+    font-family: 'Poppins', sans-serif;
+    font-size: 40px;
+    background-color: rgba(255,255,255,0.5);
+
+
+}
+
+.routine-container{
+
+}
+.routine-list {
+}
+
+button{
+  display: flex;
+  justify-content: center;
+  height:40px;
+  margin: 5px;
+  border:0;
+  font-size: 18px;
+  width:100%;
+  /*background-color: #de2d57;*/
+
+}
+a{
+  text-decoration: none;
+  color:black;
+}
 
 /*================exercise list===================*/
 .exercise-list{
@@ -300,7 +345,6 @@ ul {
 .instructions{
   display:flex;
   justify-content: center;
-
 }
 iframe{
   border: 20px solid black;
@@ -309,13 +353,17 @@ iframe{
 
 .welcome{
   font-size: 30px;
-  font-family: 'Montserrat', sans-serif;
+
+
 }
 
 #welcome-name{
   font-size: 60px;
   font-weight: bold;
   margin:30px;
+  color:white;
+  font-family: 'Poppins', sans-serif;
+
 }
 /*
 .videoWrapper {
