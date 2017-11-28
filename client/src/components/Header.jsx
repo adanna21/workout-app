@@ -7,7 +7,7 @@ function Header (props) {
       <div className='logo'/>
       {props.auth ? (
         <nav>
-          <div className="name"></div>
+          <NavLink exact to='/' ><div className="name"></div></NavLink>
           <ul>
             <li>
               <NavLink exact to='/' >HOME</NavLink>
@@ -19,7 +19,7 @@ function Header (props) {
         </nav>
       ) : (
         <nav>
-          <div className="name"></div>
+          <NavLink exact to='/' ><div className="name"></div></NavLink>
           <ul>
             <li>
               <NavLink exact to='/' activeClassName='active'>
