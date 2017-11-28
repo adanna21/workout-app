@@ -65,6 +65,7 @@ body {
   display: flex;
   flex-direction: column;
   text-align: center;
+}
 
 .home{
   margin-top: 15%;
@@ -84,16 +85,17 @@ body {
   flex-direction: row;
 }
 
-
 .button2, .button3{
   font-size: 1.3em;
   width:15vw;
   margin: 20px;
-  padding: 10px;
+  padding: 10px 5px 10px 5px;
   color: black;
-  font-weight: bolder;
   text-decoration: none;
   background-color: #de2d57;
+  font-weight: lighter;
+  font-family: 'Poppins', sans-serif;
+  border-radius: 6px;
 }
 
 .button2:hover, .button3:hover{
@@ -337,7 +339,7 @@ iframe{
   height: 70vh;
   width: 40vw;
   margin: 0 auto;
-  margin-top: 10vh;
+  /*margin-top: 10vh;*/
   color: #fff;
   text-shadow: #000 0px 0px 5px;
   /*box-shadow: #000 0px 2px 5px;*/
@@ -363,7 +365,7 @@ input {
   border: none;
   border-bottom: 1px solid white;
   color: #fff;
-  text-shadow: #000 0px 0px 5px;
+  /*text-shadow: #000 0px 0px 5px;*/
 }
 
 input::placeholder {
@@ -376,13 +378,15 @@ form h2 {
   margin-top: 2%;
 }
 .submit-btn {
-  background-color: white;
+  border: none;
+  background-color: #de2d57;
   font-size: 1.5em;
   padding: 5px 20px 5px 20px;
   color: black;
   font-weight: lighter;
-  width: inherit;
+  /*width: inherit;*/
   text-shadow: none;
+  font-family: 'Poppins', sans-serif;
 }
 
 form a {
