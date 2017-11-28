@@ -38,13 +38,13 @@ class EditName extends Component {
       <div>
         {this.props.edit === this.props.id ? (
           <form onSubmit={(e) => this.handleSubmit(e)} >
-            <input
+            <input className="rename-input"
               type="text"
               name="name"
               value={this.state.name || ""}
               onChange={(e) => this.handleChange(e)}
             />
-            <input
+          <input className ="submit-rename-btn"
               type="submit"
               value="SUBMIT"
             />

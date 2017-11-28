@@ -421,6 +421,11 @@ form h1 {
   font-weight: lighter;
 }
 
+.rename-input{
+  font-size: .8em;
+  margin-bottom: 10%;
+  color: black;
+}
 
 form h2 {
   font-size: 1.2em;
@@ -431,6 +436,19 @@ form h2 {
   border: none;
   background-color: #de2d57;
   font-size: 1.5em;
+  padding: 5px 20px 5px 20px;
+  color: black;
+  font-weight: lighter;
+  /*width: inherit;*/
+  text-shadow: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.submit-rename-btn {
+  border: none;
+  background-color: #de2d57;
+  font-size: .8em;
+  margin: 5px;
   padding: 5px 20px 5px 20px;
   color: black;
   font-weight: lighter;
