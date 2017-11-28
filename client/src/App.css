@@ -261,7 +261,7 @@ ul {
 }
 
 .routine-ul{
-  height: 600px;
+  height: 550px;
   overflow-y: scroll;
 }
 
@@ -274,13 +274,8 @@ ul {
     font-family: 'Poppins', sans-serif;
     font-size: 40px;
     background-color: rgba(255,255,255,0.5);
-
-
 }
 
-.routine-container{
-
-}
 .routine-list {
 }
 
@@ -298,6 +293,12 @@ button{
 a{
   text-decoration: none;
   color:black;
+}
+
+.save-exercise-btn{
+  position: relative;
+  left: 40%;
+
 }
 
 /*================exercise list===================*/
@@ -353,6 +354,8 @@ a{
   vertical-align: middle;
   background-color: transparent;
   border:1px solid black;
+  position: relative;
+  left: 44%;
   /*padding: 10px;*/
   background-color: #de2d57;
   /*font-family: 'Montserrat', sans-serif;*/
@@ -435,7 +438,7 @@ form h1 {
   margin-bottom: 10%;
   font-weight: bolder;
 }
-input {
+.login-input, .register-input {
   color: white;
   /*font-weight: lighter;*/
   font-size: 2em;
@@ -447,10 +450,17 @@ input {
   /*text-shadow: #000 0px 0px 5px;*/
 }
 
-input::placeholder {
+.login-input, .register-input::placeholder {
   color: white;
   font-weight: lighter;
 }
+
+.rename-input{
+  font-size: .8em;
+  margin-bottom: 10%;
+  color: black;
+}
+
 form h2 {
   font-size: 1.2em;
   margin-bottom: 10%;
@@ -468,10 +478,30 @@ form h2 {
   font-family: 'Poppins', sans-serif;
 }
 
+.submit-rename-btn {
+  border: none;
+  background-color: #de2d57;
+  font-size: .8em;
+  margin: 5px;
+  padding: 5px 20px 5px 20px;
+  color: black;
+  font-weight: lighter;
+  /*width: inherit;*/
+  text-shadow: none;
+  font-family: 'Poppins', sans-serif;
+}
+
 .submit-btn:hover {
   background-color: #981f3c;
 }
 
 form a {
   text-shadow: none;
+}
+
+
+@media screen and (min-width: 480px) {
+    body {
+
+    }
 }

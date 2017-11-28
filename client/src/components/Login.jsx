@@ -29,7 +29,7 @@ class Login extends Component {
       <div className='form-container'>
         <form onSubmit={(e) => this.props.handleLoginSubmit(e, this.state)}>
           <h1>LOGIN TO ACCOUNT</h1>
-          <input
+          <input className="login-input"
             type='text'
             name='username'
             value={this.state.username}
@@ -37,7 +37,7 @@ class Login extends Component {
             onChange={this.handleInputChange}
             required
           />
-          <input
+          <input className="login-input"
             type='password'
             name='password'
             value={this.state.password}
@@ -46,7 +46,7 @@ class Login extends Component {
             required
           />
           <h2>No account? <Link to='/register'>Register here</Link></h2>
-          <input
+          <input className="login-input"
             type='submit'
             value='Login'
             className='submit-btn'
