@@ -3,34 +3,34 @@ import { Link } from 'react-router-dom'
 
 function Categories (props) {
   return (
-    <div style={{backgroundColor: '#8080868c'}}>
-      {props.clickedCategory === 'weights' ? (
-        <div className='button-list'>
-          <div className='chest-button' onClick={() => props.getBodyType('chest')}>
+    <div className='button-list' style={{backgroundColor: '#8080868c'}}>
+      {props.clickedCategory === 'weight' ? (
+        <div className='category-wrapper'>
+          <div id='w-chest' onClick={() => props.getBodyType('chest')}>
             <Link to='/routine'><h1 className='category-text'>Chest</h1></Link>
           </div>
-          <div className='legs-button' onClick={() => props.getBodyType('legs')}>
+          <div id='w-legs' onClick={() => props.getBodyType('legs')}>
             <Link to='/routine'><h1 className='category-text'>Legs</h1></Link>
           </div>
-          <div className='back-button' onClick={() => props.getBodyType('back')}>
+          <div id='w-back' onClick={() => props.getBodyType('back')}>
             <Link to='/routine'><h1 className='category-text'>Back</h1></Link>
           </div>
-          <div className='delts-button' onClick={() => props.getBodyType('delts')}>
+          <div id='w-delts' onClick={() => props.getBodyType('delts')}>
             <Link to='/routine'><h1 className='category-text'>Delts</h1></Link>
           </div>
         </div>
       ) : (
-        <div className='button-list'>
-          <div className='chest-button' onClick={() => props.getBodyType('chest')}>
+        <div className='category-wrapper'>
+          <div id='cal-chest' onClick={() => props.getBodyType('chest')}>
             <Link to='/routine'><h1 className='category-text'>Chest</h1></Link>
           </div>
-          <div className='legs-button' onClick={() => props.getBodyType('legs')}>
+          <div id='cal-legs' onClick={() => props.getBodyType('legs')}>
             <Link to='/routine'><h1 className='category-text'>Legs</h1></Link>
           </div>
-          <div className='back-button' onClick={() => props.getBodyType('back')}>
+          <div id='cal-back' onClick={() => props.getBodyType('back')}>
             <Link to='/routine'><h1 className='category-text'>Back</h1></Link>
           </div>
-          <div className='delts-button' onClick={() => props.getBodyType('delts')}>
+          <div id='cal-delts' onClick={() => props.getBodyType('delts')}>
             <Link to='/routine'><h1 className='category-text'>Delts</h1></Link>
           </div>
         </div>

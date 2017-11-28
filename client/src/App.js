@@ -143,9 +143,9 @@ class App extends Component {
     this.setState({
       filteredData1: data
     })
-    if (type === 'weights') {
+    if (type === 'weight') {
       this.setState({
-        clickedCategory: 'weights'
+        clickedCategory: 'weight'
       })
     } else if (type === 'calisthenics') {
       this.setState({
@@ -196,7 +196,7 @@ class App extends Component {
             <div>
               <Route exact path='/' render={(props) =>
                 <Home getExerciseType={this.getExerciseType}
-                saveList={this.saveList}/>
+                saveList={this.saveList} />
                     } />
               <Route exact path='/login' render={() => (
                   this.state.auth
