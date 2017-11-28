@@ -240,6 +240,7 @@ ul {
 }
 
 .routines{
+
     margin: 5px;
     width: 400px;
     padding: 30px;
@@ -247,6 +248,7 @@ ul {
     font-family: 'Poppins', sans-serif;
     font-size: 40px;
     background-color: rgba(255,255,255,0.5);
+
 
 }
 
@@ -275,17 +277,47 @@ a{
 /*================exercise list===================*/
 .exercise-list{
   display: flex;
-  flex-wrap: nowrap;
-  height:20vh;
-  border: 2px solid black;
-  background-color: lightblue;
-  padding:5px;
+  flex-direction: column;
+  /*flex-wrap: nowrap;*/
+  /*align-items: center;*/
+
+  height:85vh;
+  /*border: 2px solid black;*/
+  /*background-color: lightblue;*/
+  /*padding:5px;*/
+  font-family: 'Poppins', sans-serif;
+  overflow-y: scroll;
+}
+
+.exercise-list button {
+  width: 20vw;
+}
+
+.save-exercise-p {
+  font-weight: bolder;
+  color: #fff;
+  font-size: 1.5em;
 }
 
 .exercise-card{
-  background-color:yellow;
-  margin:5px;
-  padding:10px;
+  background-color: rgba(255,255,255,0.4);
+  margin: 5px 55px 5px 55px;
+  /*padding:5px;*/
+}
+.exercise-card h3, .exercise-card p {
+  padding:5px;
+  color: #fff;
+  text-shadow: #000 0px 0px 5px;
+}
+
+.exercise-card h3 {
+  font-size: 1.5em;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bolder;
+}
+
+.exercise-card p  {
+  font-size: 1.1em;
 }
 
 #save{
@@ -293,17 +325,20 @@ a{
   width:10vw;
   margin: 10px;
   vertical-align: middle;
-  background-color: none;
-  border:3px solid black;
-  padding: 10px;
-  color: black;
-  font-family: 'Montserrat', sans-serif;
+  background-color: transparent;
+  border:1px solid black;
+  /*padding: 10px;*/
+  background-color: #de2d57;
+  /*font-family: 'Montserrat', sans-serif;*/
   font-weight: bolder;
 }
-
+#save a {
+  text-decoration: none;
+  color: black;
+}
 #save:hover{
-  color: #07F3F7;
-  border:3px solid #07F3F7;
+  background-color: #981f3c;
+  /*border:3px solid #07F3F7;*/
 }
 
 /*====================instructions===================*/
@@ -405,6 +440,10 @@ form h2 {
   /*width: inherit;*/
   text-shadow: none;
   font-family: 'Poppins', sans-serif;
+}
+
+.submit-btn:hover {
+  background-color: #981f3c;
 }
 
 form a {

@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react'
-import {BrowserRouter as Router, Route, Redirect} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 import Login from './components/Login'
 import Profile from './components/Profile'
 import Register from './components/Register'
@@ -8,7 +8,6 @@ import './App.css'
 
 import Home from './components/Home'
 import Header from './components/Header'
-// import Footer from './components/Footer'
 import Categories from './components/Categories'
 import Instructions from './components/Instructions'
 import ExerciseList from './components/ExerciseList'
@@ -26,7 +25,6 @@ class App extends Component {
       filteredData1: null,
       filteredData2: null,
       selectedExercise: {},
-      instructionsClicked: false,
       savedList: null,
       source: null,
     }
@@ -48,7 +46,7 @@ class App extends Component {
     })
   }
 
-  reset () {
+  reset() {
     this.setState({
       apiData: null,
       apiDataLoaded: false,
@@ -68,7 +66,7 @@ class App extends Component {
     }).catch(err => console.log(err))
   }
 
-  componentDidMount () {
+  componentDidMount() {
     fetch('/api/auth/verify', {
       credentials: 'include'
     }).then(res => res.json())
@@ -81,7 +79,7 @@ class App extends Component {
     this.getApiData()
   }
 
-  handleLoginSubmit (e, data) {
+  handleLoginSubmit(e, data) {
     e.preventDefault()
     fetch('/api/auth/login', {
       method: 'POST',
@@ -163,8 +161,7 @@ class App extends Component {
       }
     }) || {}
     this.setState({
-      selectedExercise: exercise,
-      instructionsClicked: true
+      selectedExercise: exercise
     })
   }
 
@@ -206,7 +203,10 @@ class App extends Component {
                 )} />
               <Route exact path='/categories' render={(props) => (
                 this.state.filteredData1
-                  ? <Categories getBodyType={this.getBodyType} />
+                  ? <Categories
+                    getBodyType={this.getBodyType}
+                    saveList={this.saveList}
+                    />
                   : <Redirect to='/' />
               )} />
               <Route exact path='/routine' render={(props) => (
@@ -218,7 +218,9 @@ class App extends Component {
                     user={this.state.user}
                     saveList={this.saveList}
                     savedList={this.state.savedList}
-                    setSource={this.setSource} />
+                    setSource={this.setSource}
+                    filteredData1={this.state.filteredData1}
+                    filteredData2={this.state.filteredData2} />
                   : <Redirect to='/' />
                 )} />
               <Route exact path='/instructions/:exerciseId' render={(props) => (
