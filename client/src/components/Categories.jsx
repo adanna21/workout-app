@@ -17,33 +17,33 @@ class Categories extends Component {
   render(){
     return (
       <div className='button-list' style={{backgroundColor: '#8080868c'}}>
-        {props.clickedCategory === 'weight' ? (
+        {this.props.clickedCategory === 'weight' ? (
           <div className='category-wrapper'>
-            <div id='w-chest' onClick={() => props.getBodyType('chest')}>
+            <div id='w-chest' onClick={() => this.props.getBodyType('chest')}>
               <Link to='/routine'><h1 className='category-text'>Chest</h1></Link>
             </div>
-            <div id='w-legs' onClick={() => props.getBodyType('legs')}>
+            <div id='w-legs' onClick={() => this.props.getBodyType('legs')}>
               <Link to='/routine'><h1 className='category-text'>Legs</h1></Link>
             </div>
-            <div id='w-back' onClick={() => props.getBodyType('back')}>
+            <div id='w-back' onClick={() => this.props.getBodyType('back')}>
               <Link to='/routine'><h1 className='category-text'>Back</h1></Link>
             </div>
-            <div id='w-delts' onClick={() => props.getBodyType('delts')}>
+            <div id='w-delts' onClick={() => this.props.getBodyType('delts')}>
               <Link to='/routine'><h1 className='category-text'>Delts</h1></Link>
             </div>
           </div>
         ) : (
           <div className='category-wrapper'>
-            <div id='cal-chest' onClick={() => props.getBodyType('chest')}>
+            <div id='cal-chest' onClick={() => this.props.getBodyType('chest')}>
               <Link to='/routine'><h1 className='category-text'>Chest</h1></Link>
             </div>
-            <div id='cal-legs' onClick={() => props.getBodyType('legs')}>
+            <div id='cal-legs' onClick={() => this.props.getBodyType('legs')}>
               <Link to='/routine'><h1 className='category-text'>Legs</h1></Link>
             </div>
-            <div id='cal-back' onClick={() => props.getBodyType('back')}>
+            <div id='cal-back' onClick={() => this.props.getBodyType('back')}>
               <Link to='/routine'><h1 className='category-text'>Back</h1></Link>
             </div>
-            <div id='cal-delts' onClick={() => props.getBodyType('delts')}>
+            <div id='cal-delts' onClick={() => this.props.getBodyType('delts')}>
               <Link to='/routine'><h1 className='category-text'>Delts</h1></Link>
             </div>
           </div>
@@ -51,7 +51,7 @@ class Categories extends Component {
       </div>
     )
   }
-  
+
 }
 
 export default Categories
