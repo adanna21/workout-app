@@ -12,9 +12,11 @@ class RoutineList extends Component {
       liftData: null,
       liftDataLoaded: false,
     }
-    this.updateName = this.updateName.bind(this);
-    this.toggleMode = this.toggleMode.bind(this);
+    this.updateName = this.updateName.bind(this)
+    this.toggleMode = this.toggleMode.bind(this)
   }
+
+  // Fetch all the existing exercises so the application can manage instructions.
 
   componentDidMount(){
     fetch('/api/lift')
@@ -28,6 +30,8 @@ class RoutineList extends Component {
     .catch(err => console.log(err))
   }
 
+  // POST for renaming routine.
+
   updateName(id, name){
     fetch(`/api/routine/${id}`, {
       method: 'PUT',
@@ -39,11 +43,16 @@ class RoutineList extends Component {
       })
     })
     .catch(err => console.log(err))
-    this.props.getUserFavorites();
-    this.props.getUserFavorites();
-    this.props.getUserFavorites();
-    this.props.getUserFavorites();
+
+    // Refreshing screen.
+
+    this.props.getUserFavorites()
+    this.props.getUserFavorites()
+    this.props.getUserFavorites()
+    this.props.getUserFavorites()
   }
+
+  // For the renaming form. Toggles edit or not.
 
   toggleMode(id){
     if(this.state.edit){
@@ -63,29 +72,44 @@ class RoutineList extends Component {
         {this.state.liftDataLoaded ? (
           <ul className='routine-ul'>
             {this.props.apiData.data.routines.map(routine => {
-              console.log(routine)
               if (routine.user_id === this.props.user_id){
                 return (
-                  <div key={routine.id} className="routines">
-                    <EditName edit={this.state.edit} toggleMode={this.toggleMode} routineName={routine.name} updateName={this.updateName} id={routine.id} />
+                  <div
+                    key={routine.id}
+                    className="routines">
+                    <EditName
+                      edit={this.state.edit}
+                      toggleMode={this.toggleMode}
+                      routineName={routine.name}
+                      updateName={this.updateName}
+                      id={routine.id}
+                    />
                     <p>{routine.bodypart}</p>
 
-                    <button onClick={() => {this.props.selectExerciseById(routine.exercises1); this.props.setSource("profile")}}>
+                    <button onClick={() => {
+                      this.props.selectExerciseById(routine.exercises1)
+                      this.props.setSource("profile")}}>
                     <Link to={`/instructions/${routine.exercises1}`}>
                     {this.state.liftData[routine.exercises1 - 1].name}</Link>
                     </button>
 
-                    <button onClick={() => {this.props.selectExerciseById(routine.exercises2); this.props.setSource("profile")}}>
+                    <button onClick={() => {
+                      this.props.selectExerciseById(routine.exercises2)
+                      this.props.setSource("profile")}}>
                     <Link to={`/instructions/${routine.exercises2}`}>
                     {this.state.liftData[routine.exercises2 - 1].name}</Link>
                     </button>
 
-                    <button onClick={() => {this.props.selectExerciseById(routine.exercises3); this.props.setSource("profile")}}>
+                    <button onClick={() => {
+                      this.props.selectExerciseById(routine.exercises3)
+                      this.props.setSource("profile")}}>
                     <Link to={`/instructions/${routine.exercises3}`}>
                     {this.state.liftData[routine.exercises3 - 1].name}</Link>
                     </button>
 
-                    <button onClick={() => {this.props.selectExerciseById(routine.exercises4); this.props.setSource("profile")}}>
+                    <button onClick={() => {
+                      this.props.selectExerciseById(routine.exercises4)
+                      this.props.setSource("profile")}}>
                     <Link to={`/instructions/${routine.exercises4}`}>
                     {this.state.liftData[routine.exercises4 - 1].name}</Link>
                     </button>
@@ -105,4 +129,4 @@ class RoutineList extends Component {
   }
 }
 
-export default RoutineList;
+export default RoutineList

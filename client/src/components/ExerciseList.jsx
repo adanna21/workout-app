@@ -3,14 +3,14 @@ import Exercise from './Exercise'
 
 class ExerciseList extends Component {
 
-  constructor(props) {
+  constructor(props){
     super(props)
     this.state = {
       list: null
     }
   }
 
-  componentDidMount() {
+  componentDidMount(){
 
     // Courtesy of stackoverflow.
     // This snippet shuffles the elements in an array.
@@ -30,28 +30,33 @@ class ExerciseList extends Component {
       // Because arrays start at 0.
       currentIndex -= 1
 
-
+      // Handling the array and the new array value.
       temporaryValue = array[currentIndex]
       array[currentIndex] = array[randomIndex]
       array[randomIndex] = temporaryValue
     }
 
+    // This if statement is to manage savedList.
+    // Basically, if the user has populated a routine, that routine is saved.
+    // If there is no saved routine, then it will spawn a random routine list.
 
-
-    if (this.props.savedList) {
+    if(this.props.savedList){
       this.setState({
         list: this.props.savedList
       })
-      } else {
-        let temp = array.slice(0, 4)
-        this.setState({
-          list: temp
-        })
-        this.props.saveList(temp)
-      }
+    } else {
+      let temp = array.slice(0, 4)
+      this.setState({
+        list: temp
+      })
+      this.props.saveList(temp)
     }
 
-  saveRoutine () {
+  }
+
+  // Save a routine. POST request.
+
+  saveRoutine(){
     fetch('/api/routine/', {
       method: 'POST',
       headers: {
@@ -70,7 +75,9 @@ class ExerciseList extends Component {
     }).catch(err => console.log(err))
   }
 
-  render () {
+  // Some conditional rendering for when you haven't properly selected your exercises.
+
+  render(){
     return (
       <div className='exercise-list'>
         {this.state.list ? (

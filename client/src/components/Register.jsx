@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 
 class Register extends Component {
 
-  // constructor & state
   constructor (props) {
     super(props)
     this.state = {
@@ -10,11 +9,10 @@ class Register extends Component {
       password: '',
       email: ''
     }
-    // a bind
     this.handleInputChange = this.handleInputChange.bind(this)
   }
 
-  // so the form can update properly
+  // So the form can update properly.
   handleInputChange (e) {
     const name = e.target.name
     const value = e.target.value
@@ -23,7 +21,6 @@ class Register extends Component {
     })
   }
 
-  // rendering form
   render () {
     return (
       <div className='form-container'>
