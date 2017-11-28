@@ -295,23 +295,21 @@ nav a:hover {
 
 /*=================routinelist=================*/
 ul {
-  display:flex;
+  display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-
 }
 
-.routine-ul{
-  height: 550px;
+.routine-ul {
+  height: 60vh;
   overflow-y: scroll;
 }
 
-.routines{
-
+.routines {
     margin: 5px;
     width: 400px;
     padding: 30px;
-    color:black;
+    color: black;
     font-family: 'Poppins', sans-serif;
     font-size: 40px;
     background-color: rgba(255,255,255,0.5);
@@ -353,16 +351,22 @@ a {
   /*flex-wrap: nowrap;*/
   /*align-items: center;*/
 
-  height:85vh;
+  height: 75vh;
   /*border: 2px solid black;*/
   /*background-color: lightblue;*/
   /*padding:5px;*/
   font-family: 'Poppins', sans-serif;
+
   overflow-y: scroll;
 }
 
-.exercise-list button {
+.save-exercise-btn {
+  padding: 15px;
   width: 20vw;
+}
+
+.save-exercise-btn p {
+  margin: -10px;
 }
 
 .save-exercise-p {
