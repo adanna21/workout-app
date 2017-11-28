@@ -269,6 +269,12 @@ a{
   color:black;
 }
 
+.save-exercise-btn{
+  position: relative;
+  left: 41%;
+
+}
+
 /*================exercise list===================*/
 .exercise-list{
   display: flex;
