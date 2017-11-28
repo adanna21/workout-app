@@ -57,7 +57,7 @@ html {
 body {
   width: 100vw;
   height: 100%;
-
+  overflow: hidden;
   position: fixed;
   background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6) ), url('./images/alexander-redl-185764.jpg');
   background-size: cover;
@@ -170,14 +170,11 @@ nav a:hover {
   color: #07F3F7;
 }
 /*===================Categories=====================*/
-
-.button-list{
-  /*display:flex;*/
-  /*width: 100vw;*/
-}
 .category-wrapper {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
+  /*flex-direction: row;*/
   /*align-items: center;*/
   justify-content: center;
 }
@@ -187,6 +184,7 @@ nav a:hover {
   height: 34vh;
   width: 34vw;
   margin: 1px;
+  /*min-width: 600px;*/
   background-size: cover;
   font-weight: bolder;
   border-radius: 6px;
@@ -220,6 +218,7 @@ nav a:hover {
 #cal-chest {
   background-image: url('http://www.leanitup.com/wp-content/uploads/2014/08/HEALTHY-YOUNG-GUY-DOING-PUSH-UP.jpg');
   background-size: cover;
+
 }
 
 #cal-legs {
@@ -236,6 +235,7 @@ nav a:hover {
   background-image: url('http://abmachinesguide.com/wp-content/uploads/2014/07/calisthenics-exercises.jpg');
   background-size: cover;
 }
+
 
 /*hover effects*/
 
@@ -305,7 +305,7 @@ ul {
   overflow-y: scroll;
 }
 
-.routines {
+.routines{
     margin: 5px;
     width: 400px;
     padding: 30px;
@@ -404,7 +404,8 @@ a {
   background-color: transparent;
   border:1px solid black;
   position: relative;
-  left: 44%;
+  left: 50%;
+  transform: translateX(-50%);
   /*padding: 10px;*/
   background-color: #de2d57;
   /*font-family: 'Montserrat', sans-serif;*/
@@ -469,21 +470,6 @@ iframe{
   font-family: 'Poppins', sans-serif;
 
 }
-/*
-.videoWrapper {
-	position: relative;
-	padding-bottom: 56.25%;
-	padding-top: 25px;
-	height: 0;
-}
-.videoWrapper iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-*/
 
 /*================login and register===================*/
 .form-container {
@@ -566,7 +552,7 @@ form h2 {
   font-family: 'Poppins', sans-serif;
 }
 
-.submit-btn:hover {
+.submit-btn:hover, .submit-rename-btn:hover {
   background-color: #981f3c;
 }
 
@@ -574,9 +560,103 @@ form a {
   text-shadow: none;
 }
 
+@media screen and (max-width: 740px) {
 
-@media screen and (min-width: 480px) {
-    body {
+body {
+  position: static;
+  overflow: scroll;
+}
 
-    }
+/*================HEADER===================*/
+.name {
+  width: 90px;
+  height: 50px;
+}
+/*================HOME===================*/
+  nav{
+    display:flex;
+    flex-direction: column;
+  }
+
+  nav ul {
+    font-size: 1.5em;
+  }
+
+  #title{
+    font-size: 2.5em;
+  }
+  .button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.4em;
+  }
+  .button2, .button3 {
+    width: 50vw;
+  }
+
+
+/*================LOGIN & REGISTER===================*/
+  .form-container {
+    background-color: transparent;
+  }
+
+/*================PROFILE===================*/
+#welcome-name {
+  font-size: 2.5em;
+}
+
+.routines p {
+  font-size: 1.2em;
+}
+
+/*================INSTRUCTIONS===================*/
+.instructions {
+  font-size: 1.7em;
+}
+.instructions-btn {
+  font-size: .8em;
+}
+
+/*Iframe{
+  width: 20%;
+  height: 20%;
+}*/
+
+/*================CATEGORIES===================*/
+/*.category-wrapper {
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
+}*/
+
+.category-container {
+  /*height: 40vh;*/
+  width: 100%;
+}
+
+.category-wrapper {
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  overflow-y: scroll;
+}
+
+.category-container {
+  /*overflow: hidden;
+  height: 34vh;
+  width: 34vw;
+  margin: 1px;
+  background-size: cover;
+  font-weight: bolder;
+  border-radius: 6px;*/
+}
+
+/*================ROUTINE===================*/
+#save {
+  width: 40vw;
+}
+
 }

@@ -98,7 +98,7 @@ class ExerciseList extends Component {
           <p>Error with category selection. Please return to Home and try again.</p>
         ) : (
           this.props.auth ? (
-            <button className='save-exercise-btn' onClick={() => this.saveRoutine()}><p>Save This Routine</p></button>
+            <button className='save-exercise-btn' onClick={() => this.saveRoutine()}><p>Save</p></button>
           ) : (
             <p className='save-exercise-p'>Please login to save</p>
           )
