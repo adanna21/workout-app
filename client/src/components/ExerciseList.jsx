@@ -4,39 +4,36 @@ import Exercise from './Exercise'
 
 class ExerciseList extends Component {
 
-  constructor(props){
-    super(props);
+  constructor (props) {
+    super(props)
     this.state = {
       list: null
     }
   }
 
-  componentDidMount(){
-
+  componentDidMount () {
     // stack overflow's shuffle an array
     let array = this.props.apiData
-    let currentIndex = array.length, temporaryValue, randomIndex;
+    let currentIndex = array.length, temporaryValue, randomIndex
 
     // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
-
+    while (currentIndex !== 0) {
       // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
+      randomIndex = Math.floor(Math.random() * currentIndex)
+      currentIndex -= 1
 
       // And swap it with the current element.
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-
+      temporaryValue = array[currentIndex]
+      array[currentIndex] = array[randomIndex]
+      array[randomIndex] = temporaryValue
     }
 
-    if(this.props.savedList){
+    if (this.props.savedList) {
       this.setState({
         list: this.props.savedList
       })
     } else {
-      let temp = array.slice(0,4)
+      let temp = array.slice(0, 4)
       this.setState({
         list: temp
       })
@@ -44,14 +41,14 @@ class ExerciseList extends Component {
     }
   }
 
-  saveRoutine(){
+  saveRoutine () {
     fetch('/api/routine/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        name: "New Routine",
+        name: 'New Routine',
         type: this.state.list[0].type,
         bodypart: this.state.list[0].bodypart,
         user_id: this.props.user.id,
@@ -63,20 +60,20 @@ class ExerciseList extends Component {
     }).catch(err => console.log(err))
   }
 
-  render(){
+  render () {
     return (
       <div className='exercise-list'>
         {this.state.list ? (
           this.state.list.map(exercise => {
-          return <Exercise key={exercise.id} exercise={exercise} selectExerciseById={this.props.selectExerciseById} setSource={this.props.setSource} />
+            return <Exercise key={exercise.id} exercise={exercise} selectExerciseById={this.props.selectExerciseById} setSource={this.props.setSource} />
           })
         ) : (
           <p>Loading...</p>
         )}
         {this.props.auth ? (
-          <button onClick={() => this.saveRoutine()}>Save</button>
+          <button className='save-exercise-btn' onClick={() => this.saveRoutine()}>Save This Routine</button>
         ) : (
-          <p>Please log in to save.</p>
+          <p className='save-exercise-p'>Please login to save</p>
         )}
       </div>
     )

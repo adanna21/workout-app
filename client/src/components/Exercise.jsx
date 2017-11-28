@@ -8,8 +8,8 @@ class Exercise extends Component {
       <div className='exercise-card'>
 
         <h3>{this.props.exercise.name}</h3>
-        <p>Sets:{this.props.exercise.sets}</p>
-        <p>Repetition:{this.props.exercise.reps}</p>
+        <p>Sets: {this.props.exercise.sets}</p>
+        <p>Repetition: {this.props.exercise.reps}</p>
         <button id='save'onClick={() => this.props.selectExerciseById(this.props.exercise.id)}>
           <Link to={`/instructions/${this.props.exercise.id}`}> Instructions </Link>
         </button>
