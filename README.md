@@ -77,8 +77,8 @@ The app features log-in functionality as a way to save routines; however, loggin
 
 **Exercises**
 
-|id|name|bodytype|type|url|reps|sets|
-|:-:|:-:|:-:|:-:|:-:|:-:|
+|id|name|bodytype|type|link|reps|sets|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |Primary|||||||
 
 **Routines**
