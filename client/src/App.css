@@ -198,7 +198,7 @@ nav a:hover {
   background-size: cover;
 }
 
-#text{
+.category-text{
   margin-top:60px;
   display:inline-block;
   font-size: 80px;
@@ -208,7 +208,7 @@ nav a:hover {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-#text:hover{
+.category-text:hover{
   color: #de2d57;
   border:3px solid #de2d57;
   background-color: rgba(0, 0, 0, 0.7);
