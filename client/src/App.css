@@ -148,6 +148,10 @@ nav a {
 nav a:hover {
   color: #07F3F7;
 }
+
+.active {
+  color: #07F3F7;
+}
 /*===================Categories=====================*/
 
 .button-list{
