@@ -30,6 +30,14 @@ Keeping this in mind, we want to reduce the number of "screens" the user will ne
 
 The app features log-in functionality as a way to save routines; however, logging in is not mandatory if the user has no intention of saving their routine.
 
+First, we constructed a basic back-end server that contains data regarding possible exercises the user can do. 
+
+Once we confirmed that GET requests worked with our API, we constructed a front-end website to serve that data. Going through the components, we divided the work, assisting one another with solving errors, until the framework of the project was finished.
+
+Alongside constructing the `React.js` front-end, we also added back-end functionality we needed, such as for **users** and **routines**.
+
+Finally, once we determined the functionalities of our front-end to be completed, we styled the application and fixed errors that we discovered.
+
 ### INITIAL WIREFRAMES
 
 **Landing Page**
