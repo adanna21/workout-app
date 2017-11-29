@@ -1,13 +1,13 @@
 
 
-# PROJECT GOODCALL
+# PROJECT ILIFT
 
 ### TEAM MEMBERS
 
-1. Adanna
-2. Marco
-3. Danny
-4. Matt
+1. Adanna Omatu
+2. Marco Acosta
+3. Danny Eng
+4. Matt Sucharski
 
 ### PROJECT GOALS
 
@@ -30,7 +30,7 @@ Keeping this in mind, we want to reduce the number of "screens" the user will ne
 
 The app features log-in functionality as a way to save routines; however, logging in is not mandatory if the user has no intention of saving their routine.
 
-### WIREFRAMES
+### INITIAL WIREFRAMES
 
 **Landing Page**
 ![LANDING PAGE](https://i.imgur.com/QS4QbyQ.jpg)
@@ -66,6 +66,8 @@ The app features log-in functionality as a way to save routines; however, loggin
 - `passport-local`
 - `body-parser`
 - `cookie-parser`
+
+- `react-iframe`
 
 ### ERDS
 
