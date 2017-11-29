@@ -130,6 +130,7 @@ Finally, once we determined the functionalities of our front-end to be completed
 ### LINKS
 
 [PROJECT BOARD](https://github.com/adanna21/workout-app/projects/1)
+[DEPLOYED APP](https://shielded-garden-81038.herokuapp.com/)
 
 ### TROUBLES
 
