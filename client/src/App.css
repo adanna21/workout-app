@@ -420,6 +420,10 @@ a {
   /*border:3px solid #07F3F7;*/
 }
 
+.white {
+  color: white;
+}
+
 /*====================instructions===================*/
 .instructions{
   display: flex;
